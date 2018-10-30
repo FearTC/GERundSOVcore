@@ -5406,6 +5406,46 @@ focus_tree = {
 
 		}
 	}
+	
+	focus = {
+		id = HUN_etat_heavy_battleship
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = HUN_capital_ships }
+		x = -2
+		y = 4
+		relative_position_id = HUN_naval_warfare
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = HUN_capital_ships
+				bonus = 0.4
+				uses = 2
+				category = shbb_tech
+			}
+
+		}
+	}
 
 
 	focus = {
