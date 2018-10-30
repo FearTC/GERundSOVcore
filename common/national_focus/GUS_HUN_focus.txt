@@ -269,15 +269,13 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			OR = {
-				if = {
-					limit = { AUS = { is_ai = no } } 
-					AUS = { country_event = { id = DOD_hungary.1 } }
-				}
-				if = {
-					limit = { AUS = { is_ai = yes } } 
-					AUS = { country_event = { id = DOD_hungary.2 } }
-				}
+			if = {
+				limit = { AUS = { is_ai = no } } 
+				AUS = { country_event = { id = DOD_hungary.1 } }
+			}
+			if = {
+				limit = { AUS = { is_ai = yes } } 
+				AUS = { country_event = { id = DOD_hungary.2 } }
 			}
 		}
 	}
@@ -430,15 +428,13 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			OR = {
-				if = {
-					limit = { CZE = { is_ai = no } }
-					CZE = { country_event = { id = DOD_hungary.10 } }
-				}
-				if = {
-					limit = { CZE = { is_ai = yes } }
-					HUN = { country_event = { id = DOD_hungary.11 hours = 6 } }
-				}
+			if = {
+				limit = { CZE = { is_ai = no } }
+				CZE = { country_event = { id = DOD_hungary.10 } }
+			}
+			if = {
+				limit = { CZE = { is_ai = yes } }
+				HUN = { country_event = { id = DOD_hungary.11 hours = 6 } }
 			}
 		}
 	}
@@ -759,7 +755,7 @@ focus_tree = {
 		prerequisite = { focus = HUN_reclaim_the_empire }
 		mutually_exclusive = { focus = HUN_allies_path }
 		x = 1
-		y = 8
+		y = 1
 		relative_position_id = HUN_reclaim_the_empire
 
 		cost = 6
@@ -816,7 +812,7 @@ focus_tree = {
 		prerequisite = { focus = HUN_reclaim_the_empire }
 		mutually_exclusive = { focus = HUN_axis_path }
 		x = -1
-		y = 8
+		y = 1
 		relative_position_id = HUN_reclaim_the_empire
 
 		cost = 6
@@ -876,8 +872,8 @@ focus_tree = {
 		id = HUN_army
 		icon = GFX_focus_rom_royal_dictatorship
 		prerequisite = { focus = HUN_reclaim_the_empire }
-		x = 3
-		y = 8
+		x = 8
+		y = 1
 		relative_position_id = HUN_reclaim_the_empire
 
 		cost = 5
@@ -908,7 +904,7 @@ focus_tree = {
 		prerequisite = { focus = HUN_army }
 		mutually_exclusive = { focus = HUN_quality_army1 }
 		x = -1
-		y = 9
+		y = 1
 		relative_position_id = HUN_army
 
 		cost = 5
@@ -943,7 +939,7 @@ focus_tree = {
 		prerequisite = { focus = HUN_army }
 		mutually_exclusive = { focus = HUN_quantity_army1 }
 		x = 1
-		y = 9
+		y = 1
 		relative_position_id = HUN_army
 
 		cost = 5
@@ -978,7 +974,7 @@ focus_tree = {
 		prerequisite = { focus = HUN_quantity_army1 }
 		mutually_exclusive = { focus = HUN_quality_army2 }
 		x = -1
-		y = 10
+		y = 2
 		relative_position_id = HUN_army
 
 		cost = 5
@@ -1013,7 +1009,7 @@ focus_tree = {
 		prerequisite = { focus = HUN_quality_army1 }
 		mutually_exclusive = { focus = HUN_quantity_army2 }
 		x = 1
-		y = 10
+		y = 2
 		relative_position_id = HUN_army
 
 		cost = 5
@@ -1048,7 +1044,7 @@ focus_tree = {
 		prerequisite = { focus = HUN_quantity_army2 }
 		mutually_exclusive = { focus = HUN_quality_army3 }
 		x = -1
-		y = 11
+		y = 3
 		relative_position_id = HUN_army
 
 		cost = 5
@@ -1083,7 +1079,7 @@ focus_tree = {
 		prerequisite = { focus = HUN_quality_army2 }
 		mutually_exclusive = { focus = HUN_quantity_army3 }
 		x = 1
-		y = 11
+		y = 3
 		relative_position_id = HUN_army
 
 		cost = 5
@@ -1117,7 +1113,7 @@ focus_tree = {
 		icon = GFX_recruitment
 		prerequisite = { focus = HUN_quality_army3 focus = HUN_quantity_army3 }
 		x = 0
-		y = 12
+		y = 4
 		relative_position_id = HUN_army
 
 		cost = 10
@@ -1154,8 +1150,8 @@ focus_tree = {
 		id = HUN_nation
 		icon = GFX_goal_tfv_sever_ties_with_uk
 		prerequisite = { focus = HUN_reclaim_the_empire }
-		x = -3
-		y = 8
+		x = -6
+		y = 1
 		relative_position_id = HUN_reclaim_the_empire
 
 		cost = 5
@@ -4076,8 +4072,8 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = HUN_theoretical_air_efforts
-				bonus = 0.5
-				uses = 1
+				bonus = 0.75
+				uses = 2
 				category = air_doctrine
 			}
 		}
@@ -4188,7 +4184,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = HUN_establish_the_air_force
 				bonus = 0.5
-				uses = 1
+				uses = 3
 				category = air_doctrine
 			}
 		}
@@ -4661,7 +4657,7 @@ focus_tree = {
 		id = HUN_army_maneuvers
 		icon = GFX_goal_plan
 		prerequisite = { focus = HUN_bled_agreement }
-		x = 6
+		x = 5
 		y = 1
 		relative_position_id = HUN_bled_agreement
 
@@ -4691,8 +4687,8 @@ focus_tree = {
 			army_experience = 10
 			add_tech_bonus = {
 				name = HUN_army_maneuvers
-				bonus = 0.5
-				uses = 1
+				bonus = 0.4
+				uses = 2
 				category = land_doctrine
 			}
 		}
@@ -4737,7 +4733,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = HUN_mobile_focus
 				bonus = 0.5
-				uses = 1
+				uses = 3
 				category = cat_mobile_warfare
 			}
 		}
@@ -4747,7 +4743,7 @@ focus_tree = {
 		id = HUN_the_botond
 		icon = GFX_goal_generic_army_motorized
 		prerequisite = { focus = HUN_mobile_focus }
-		x = -2
+		x = -3
 		y = 1
 		relative_position_id = HUN_mobile_focus
 
@@ -4776,7 +4772,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = HUN_the_botond
-				bonus = 0.5
+				bonus = 0.75
 				uses = 1
 				category = motorized_equipment
 			}
@@ -4787,9 +4783,9 @@ focus_tree = {
 		id = HUN_motorized_logistics
 		icon = GFX_goal_generic_army_motorized
 		prerequisite = { focus = HUN_the_botond }
-		x = -1
-		y = 4
-		relative_position_id = HUN_mobile_focus
+		x = 2
+		y = 2
+		relative_position_id = HUN_the_botond
 
 		cost = 10
 
@@ -4976,8 +4972,8 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = HUN_armored_warfare
-				bonus = 0.5
-				uses = 1
+				bonus = 0.4
+				uses = 3
 				category = armor
 			}
 		}
@@ -5017,7 +5013,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = HUN_mobile_corps_doctrine
 				bonus = 0.5
-				uses = 1
+				uses = 3
 				category = cat_mobile_warfare
 			}
 		}
@@ -5062,7 +5058,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = HUN_home_defense
 				bonus = 0.5
-				uses = 1
+				uses = 3
 				category = cat_grand_battle_plan
 			}
 		}
@@ -5101,8 +5097,8 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = HUN_danuvia_submachine_guns
-				bonus = 0.5
-				uses = 1
+				bonus = 0.4
+				uses = 3
 				category = infantry_weapons
 			}
 		}
@@ -5141,8 +5137,8 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = HUN_artillery_effort
-				bonus = 0.5
-				uses = 2
+				bonus = 0.4
+				uses = 4
 				category = artillery
 			}
 		}
@@ -5181,6 +5177,12 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = HUN_light_infantry_divisions_doctrine_tech_tt
 			custom_effect_tooltip = HUN_light_infantry_divisions_doctrine_unit_tt
+			add_tech_bonus = {
+				name = HUN_home_defense
+				bonus = 0.5
+				uses = 3
+				category = cat_grand_battle_plan
+			}
 			hidden_effect = {
 				if = {
 					limit = { has_tech = tech_engineers }
@@ -5272,8 +5274,8 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = HUN_form_parachute_battalions
-				bonus = 0.75
-				uses = 1
+				bonus = 0.6
+				uses = 2
 				category = para_tech
 			}
 		}
@@ -5287,7 +5289,7 @@ focus_tree = {
 		id = HUN_naval_warfare
 		icon = GFX_goal_generic_build_navy
 		prerequisite = { focus = HUN_secret_rearmament }
-		x = 12
+		x = 11
 		y = 1
 		relative_position_id = HUN_secret_rearmament
 
@@ -5356,8 +5358,8 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = HUN_restauration
-				bonus = 0.75
-				uses = 1
+				bonus = 0.4
+				uses = 3
 				category = cat_fleet_in_being
 			}
 
@@ -5396,8 +5398,8 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = HUN_capital_ships
-				bonus = 0.5
-				uses = 2
+				bonus = 0.4
+				uses = 4
 				category = bc_tech
 				category = bb_tech
 			}
@@ -5439,8 +5441,8 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = HUN_reform
-				bonus = 0.5
-				uses = 2
+				bonus = 0.4
+				uses = 6
 				category = cat_trade_interdiction
 				category = cat_base_strike
 			}
@@ -5480,8 +5482,8 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = HUN_destroyer
-				bonus = 0.75
-				uses = 1
+				bonus = 0.4
+				uses = 3
 				category = dd_tech
 			}
 
@@ -5520,8 +5522,8 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = HUN_cruisers
-				bonus = 0.5
-				uses = 2
+				bonus = 0.4
+				uses = 3
 				category = cl_tech
 				category = ca_tech
 			}
@@ -5561,8 +5563,8 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = HUN_submarines
-				bonus = 0.75
-				uses = 1
+				bonus = 0.4
+				uses = 4
 				category = ss_tech
 			}
 
@@ -5602,8 +5604,8 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = HUN_carrier
-				bonus = 0.75
-				uses = 1
+				bonus = 0.4
+				uses = 4
 				category = cv_tech
 			}
 
