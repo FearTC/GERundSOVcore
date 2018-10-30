@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		
 		modifier = {
-			add = 10
+			add = 90
 			original_tag = HUN
 			#always = no
 			has_dlc = "Death or Dishonor"
