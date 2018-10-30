@@ -1,0 +1,3 @@
+JSI = "countries/UMC_JSI_country.txt"
+JPS = "countries/UMC_JPS_country.txt"
+JERS = "countries/Zipang.txt"

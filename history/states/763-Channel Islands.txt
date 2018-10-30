@@ -1,0 +1,21 @@
+state = {
+	id=763
+	name= "STATE_763"
+	manpower= 93000
+	provinces= { 13207 13208 }
+	state_category = enclave
+
+	history = {
+		owner = ENG
+		add_core_of = ENG
+		victory_points = {
+			13207 1 
+		}
+		buildings = {
+			infrastructure = 3
+			13207 = {
+				naval_base = 1
+			}
+		}
+	}
+}

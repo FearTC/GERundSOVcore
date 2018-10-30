@@ -1,0 +1,41 @@
+﻿air_wings = {
+	
+	61 = {
+		tac_bomber_equipment_1 =  {		
+				owner = "GER" 
+				amount = 15
+			}
+			name = "1. Bomber Legion Condor"
+			
+		tac_bomber_equipment_0 =  {		
+				owner = "GER" 
+				amount = 15
+			}
+			name = "2. Bomber Legion Condor"
+			
+		tac_bomber_equipment_0 =  {		
+				owner = "GER" 
+				amount = 15
+			}
+			name = "3. Bomber Legion Condor"
+			
+		fighter_equipment_1 =  {		
+			owner = "GER" 
+			amount = 30
+		}
+		name = "4. Kämpfer Legion Condor"		
+		ace={ 
+			modifier="fighter_genius"
+			name="Werner"
+			surname="Mölders"
+			callsign="Daddy"
+			portrait=1 
+		}
+		
+		CAS_equipment_1 =  {			
+			owner = "GER" 
+			amount = 12
+		}
+		name = "5. Unterstützen Legion Condor"			
+	}
+}

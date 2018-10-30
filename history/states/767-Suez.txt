@@ -1,0 +1,21 @@
+state = {
+	id=767
+	name= "STATE_767"
+	manpower= 10000
+	provinces= { 12049 4073 13210 13209 }
+	state_category = town
+
+	history = {
+		owner = ENG
+		add_core_of = EGY
+		victory_points = {
+			12049 5
+		}
+		buildings = {
+			infrastructure = 6
+			12049 = {
+				naval_base = 3
+			}
+		}
+	}
+}

@@ -1,0 +1,19 @@
+state = {
+	id=771
+	name= "STATE_771"
+	manpower= 250000
+	provinces= { 12283 4396 8091 10285 10269 7387 }
+	state_category = rural
+	
+	resources={
+	}
+
+	history = {
+		owner = SAR
+		add_core_of = SAR
+		buildings = {
+			infrastructure = 3
+		}
+	}
+}
+

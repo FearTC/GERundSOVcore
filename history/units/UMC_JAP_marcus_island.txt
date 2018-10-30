@@ -1,0 +1,17 @@
+﻿units = {
+	division = {
+		location = 13026  
+		division_template = "Kaihei"
+		start_equipment_factor = 1.00
+	}
+	division = {
+		location = 13026 
+		division_template = "Kaihei"
+		start_equipment_factor = 1.00
+	}
+	division = {
+		location = 13026 
+		division_template = "Kaihei"
+		start_equipment_factor = 1.00
+	}
+}

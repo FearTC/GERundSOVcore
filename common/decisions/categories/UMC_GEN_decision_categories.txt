@@ -1,0 +1,14 @@
+UMC_GEN_tank_purchase_cat = { 
+
+	allowed = {
+		
+	}
+	
+	available = {
+	}
+
+	visible = {
+		ROOT = { has_completed_focus = GEN_Licences }
+	}
+	
+}

@@ -1,0 +1,14 @@
+state = {
+	id=764
+	name= "STATE_764"
+	manpower= 93000
+	provinces= { 4556 }
+	state_category = enclave
+
+	history = {
+		owner = ENG
+		buildings = {
+			infrastructure = 3
+		}
+	}
+}

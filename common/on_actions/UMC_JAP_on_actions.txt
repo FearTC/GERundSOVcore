@@ -1,0 +1,20 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			611 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			
+			
+			MAN = { set_cosmetic_tag = MAN_JAP_puppet }
+			MEN = { set_cosmetic_tag = MEN_JAP_puppet }
+			JSI = { set_cosmetic_tag = JSI_JAP_puppet }
+			JPS = { set_cosmetic_tag = JPS_JAP_puppet }
+		}
+	}
+}

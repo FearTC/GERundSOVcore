@@ -1,0 +1,857 @@
+leader_traits = {
+
+	JAP_Hirohito_T1 = {
+		random = no
+		
+		stability_factor = 0.50
+		political_power_factor = 0.25
+		drift_defence_factor = 0.5
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	JAP_Hirohito_T2 = {
+		random = no
+		
+		army_org_Factor = 0.05
+		ai_call_ally_desire_factor = -40
+		ai_join_ally_desire_factor = -40
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Hirohito_T3 = {
+		random = no
+		
+			max_command_power = 25
+			command_power_gain_mult = -0.15
+			military_leader_cost_factor = -0.50
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Hirohito_T4 = {
+		random = no
+		
+			stability_factor = 0.10
+			drift_defence_factor = 0.25
+			
+			offensive_war_stability_factor = 0.25
+			defensive_war_stability_factor = 0.25
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+
+	JAP_Demchugdongrub_T1 = {
+		random = no
+		
+		stability_factor = 0.05
+		political_power_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Demchugdongrub_T2 = {
+		random = no
+		
+		war_support_factor = 0.10
+		cavalry_attack_factor = 0.15
+		cavalry_defence_factor = 0.05
+		conscription = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Demchugdongrub_T3 = {
+		random = no
+		
+			stability_factor = -0.25
+			drift_defence_factor = -0.25
+			max_command_power = -50
+			command_power_gain_mult = -0.50
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	JAP_Hashimoto_T = {
+		random = no
+		sprite = 13
+		
+			stability_factor = -0.05
+			fascism_drift = 0.15
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Yonai_T = {
+		random = no
+		sprite = 13
+		
+			political_power_factor = 0.12
+			
+			opinion_gain_monthly_factor = 0.10
+			
+			production_speed_dockyard_factor = 0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Oshima_T = {
+		random = no
+		sprite = 13
+		
+		decryption_factor = -0.05
+		
+		enemy_partisan_effect = -0.25
+		foreign_subversive_activites = -0.25
+		
+		enemy_justify_war_goal_time = -0.1
+		
+		non_core_manpower = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Sugihara_T = {
+		random = no
+		sprite = 13
+		
+			political_power_factor = 0.08
+			
+			opinion_gain_monthly_factor = 0.15
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Godo_T = {
+		random = no
+		sprite = 13
+		
+			production_speed_industrial_complex_factor = 0.05
+			production_speed_arms_factory_factor = 0.05
+			production_speed_dockyard_factor = 0.08
+			
+			production_factory_max_efficiency_factor = 0.05
+			
+			research_time_factor = -0.01
+			
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	JAP_Katohito_T = {
+		random = no
+		sprite = 13
+		
+		army_attack_factor = 0.12
+		experience_gain_army_factor = -0.15 
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Sugiyama_T = {
+		random = no
+		sprite = 13
+		
+		training_time_factor = -0.15
+		mobilization_speed = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Tojo_T = {
+		random = no
+		sprite = 13
+		
+		war_support_factor = 0.03
+		
+		political_power_gain = 0.05
+		
+		army_morale_factor = 0.08
+		
+		attrition = 0.06
+		
+		max_command_power = 5  
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	JAP_Hiroyasu_T = {
+		random = no
+		sprite = 13
+		
+		navy_capital_ship_attack_factor = 0.1 
+		navy_capital_ship_defence_factor = 0.05  
+
+		naval_strike_attack_factor = 0.05
+		air_strategic_bomber_bombing_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Nagano_T = {
+		random = no
+		sprite = 13
+
+		sortie_efficiency = 0.08
+
+		spotting_chance = 0.03
+		naval_hit_chance = 0.03
+		naval_speed_factor = 0.03
+		
+		convoy_raiding_efficiency_factor = 0.15
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Shimada_T = {
+		random = no
+		sprite = 13
+
+		navy_capital_ship_attack_factor = 0.1 
+		navy_capital_ship_defence_factor = 0.1 
+
+		navy_screen_attack_factor = 0.05  
+		navy_screen_defence_factor = 0.05
+
+		ships_at_battle_start = 0.1 
+		naval_retreat_speed = -0.12
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	JAP_Kamada_T = {
+		random = no
+		sprite = 13
+
+		air_night_penalty = -0.08
+		air_weather_penalty = -0.08
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Anami_T = {
+		random = no
+		sprite = 13
+
+		experience_gain_air_factor = 0.05
+		air_cas_present_factor = 0.08
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Doihara_T = {
+		random = no
+		sprite = 13
+		
+		air_air_superiority_attack_factor = 0.05
+		air_air_superiority_defence_factor = 0.05 
+		air_air_superiority_agility_factor = 0.05 
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	
+	JAP_Yamashita_T = {
+		random = no
+		sprite = 13
+		
+		experience_gain_army = 0.15
+		
+		invasion_preparation = -0.15
+		
+		army_leader_start_planning_level = 1
+		
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Terauchi_T = {
+		random = no
+		sprite = 13
+		
+		experience_gain_army = 0.08
+		
+		enemy_partisan_effect = -0.05
+		foreign_subversive_activites = -0.05
+		
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Yamamoto_T = {
+		random = no
+		sprite = 13
+		
+		experience_gain_navy = 0.15
+		
+		supply_consumption_factor = -0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Genda_T = {
+		random = no
+		sprite = 1
+		
+		experience_gain_air = 0.02
+		experience_gain_navy = 0.08
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Tokugava_T = {
+		random = no
+		sprite = 1
+		
+		experience_gain_air = 0.05
+		
+		air_ace_generation_chance_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Kumazo_T = {
+		random = no
+		sprite = 1
+		
+		experience_gain_air = 0.1
+		
+		research_time_factor = -0.01
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Nishina_T = {
+		random = no
+		sprite = 1
+		
+		research_time_factor = -0.03
+		production_speed_nuclear_reactor_factor = 0.08
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Itokawa_T = {
+		random = no
+		sprite = 1
+		
+		research_time_factor = -0.03
+		production_speed_rocket_site_factor = 0.08
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	JAP_Imamura_T = {
+		random = no
+		sprite = 1
+		
+		political_power_gain = 0.05
+		
+		attrition = -0.06
+		
+		foreign_subversive_activites = -0.15
+		
+		non_core_manpower = 0.05
+			
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Okamura_T = {
+		random = no
+		sprite = 1
+		
+		army_infantry_attack_factor = 0.12
+		army_infantry_defence_factor = 0.12
+		army_org_Factor = 0.06
+		attrition = 0.08
+			
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Hata_T = {
+		random = no
+		sprite = 1
+		
+		navy_carrier_air_attack_factor = 0.03
+		navy_carrier_air_targetting_factor = 0.03
+		navy_carrier_air_agility_factor = 0.03
+		
+		air_strategic_bomber_bombing_factor = 0.08
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Fushida_T = {
+		random = no
+		sprite = 1
+		
+		navy_carrier_air_attack_factor = 0.06
+		
+		air_cas_present_factor = 0.08
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Tsukahara_T = {
+		random = no
+		sprite = 1
+		
+		navy_carrier_air_attack_factor = 0.03
+		navy_carrier_air_targetting_factor = 0.03
+		navy_carrier_air_agility_factor = 0.03
+		
+		naval_strike_attack_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Kato_T = {
+		random = no
+		sprite = 1
+		
+			experience_gain_air_factor = 0.1
+			
+			army_bonus_air_superiority_factor = 0.05
+			
+			air_ace_generation_chance_factor = 0.1
+			air_accidents_factor = -0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Toyoda_T = {
+		random = no
+		sprite = 1
+		
+			navy_capital_ship_attack_factor = 0.12
+			ships_at_battle_start = 0.05
+			
+			naval_retreat_chance = -0.15
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Ugaki_T = {
+		random = no
+		sprite = 1
+		
+		navy_capital_ship_attack_factor = 0.06
+		navy_capital_ship_defence_factor = 0.06
+		
+		navy_anti_air_attack_factor = 0.12
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Nagumo_T = {
+		random = no
+		sprite = 1
+		
+		sortie_efficiency = 0.1
+		
+		ships_at_battle_start = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	
+	JAP_Osaka_T = {
+		random = no
+		
+		equipment_bonus = {
+			armor = {
+				ap_attack = -0.05
+				hard_attack = -0.1
+				soft_attack = 0.15
+				
+				armor_value = -0.15 
+				
+				maximum_speed = 0.05
+				reliability = 0.05 
+				
+				build_cost_ic = -0.15
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	
+	JAP_Kure_T = { 
+		random = no
+		
+		equipment_bonus = {
+			carrier = {
+				carrier_size = 0.05 
+				armor_value = 0.15 
+				
+				naval_range = 0.05
+				naval_speed = -0.05 
+				build_cost_ic = 0.05
+			}
+			capital_ship = {
+				armor_value = 0.25 
+				attack = 0.15
+				sub_detection = -0.15
+				
+				naval_range = 0.05
+				naval_speed = -0.05 
+				build_cost_ic = 0.05
+			}
+			screen_ship = {
+				armor_value = 0.05 
+				
+				attack = 0.05
+				torpedo_attack = 0.25
+				
+				sub_detection = -0.15
+				
+				naval_range = 0.05
+				naval_speed = -0.05 
+				build_cost_ic = 0.05
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	JAP_Yokosuka_T = { #longer ranged, CVs favor larger hangers over armor
+		random = no
+		
+		equipment_bonus = {
+			carrier = {
+				carrier_size = 0.20 
+				
+				armor_value = -0.15
+				
+				naval_range = 0.15
+				
+				build_cost_ic = -0.05
+			}
+			naval_air = {
+				build_cost_ic = -0.05
+			}
+			capital_ship = {
+				armor_value = -0.05
+
+				attack = 0.05				
+				
+				naval_range = 0.15
+			}
+			screen_ship = {
+				naval_range = 0.15
+			}
+			submarine = {
+				naval_range = 0.15
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Maizuru_T = {
+		random = no
+		equipment_bonus = {
+			screen_ship = {
+				armor_value = 0.05
+
+				attack = 0.05	
+				torpedo_attack = 0.15
+			
+				sub_detection = 0.15
+			
+				naval_range = 0.3 
+				naval_speed = 0.15 
+				build_cost_ic = 0.1
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Sasebo_T = {
+		random = no
+		equipment_bonus = {
+			screen_ship = {
+				naval_range = -0.15
+			
+				build_cost_ic = -0.2
+			}
+			submarine = {
+				torpedo_attack = 0.05
+				
+				naval_range = -0.15
+			
+				build_cost_ic = -0.2
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	JAP_Mitsubishi_T = { 
+		random = no
+		equipment_bonus = {
+			fighter_equipment = {
+				air_agility = 0.2 
+				maximum_speed = 0.1
+				
+				reliability = 0.08
+			}
+			cv_fighter_equipment = {
+				air_agility = 0.2
+				maximum_speed = 0.1
+				
+				reliability = 0.08
+			}
+			
+			heavy_fighter_equipment = {
+				air_agility = 0.12
+				maximum_speed = 0.1
+				
+				reliability = 0.08
+			}
+		}
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	JAP_Aichi_T = {
+		random = no
+		equipment_bonus = {
+			CAS_equipment = {
+				air_range = 0.25
+
+				naval_strike_attack = 0.1
+				
+				reliability = 0.05
+			}
+			
+			cv_CAS_equipment = {
+				air_range = 0.25
+
+				naval_strike_attack = 0.1
+				
+				reliability = 0.05
+			}
+			
+			nav_bomber_equipment = {
+				air_range = 0.25
+
+				naval_strike_attack = 0.1
+				
+				reliability = 0.05
+			}
+			
+			cv_nav_bomber_equipment = {
+				air_range = 0.25
+
+				naval_strike_attack = 0.1
+				
+				reliability = 0.05
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Nakajima_T = {
+		random = no
+		
+		equipment_bonus = {
+			heavy_fighter_equipment = {
+				air_attack = 0.05
+				
+				reliability = 0.05
+			}
+		
+			tac_bomber_equipment = {
+				air_bombing = 0.1
+				
+				air_defence = 0.05
+			
+				reliability = 0.05
+			}
+			strat_bomber_equipment = {
+				air_bombing = 0.12
+				
+				air_defence = 0.05
+				
+				reliability = 0.05
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Yokosuka_Air_T = {
+		random = no
+		equipment_bonus = {
+			cv_fighter_equipment = {
+				reliability = 0.05
+				
+				build_cost_ic = -0.12
+			}
+			
+			cv_CAS_equipment = {
+				reliability = 0.05
+				
+				build_cost_ic = -0.12
+			}
+
+			cv_nav_bomber_equipment = {
+				
+				reliability = 0.05
+				
+				build_cost_ic = -0.12
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	JAP_Tokyo_T = {
+		random = no
+		
+		equipment_bonus = {
+			infantry_equipment = {
+				soft_attack = 0.12
+				defense = 0.02
+
+				build_cost_ic = -0.05
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_Nissan_T = {
+		random = no
+		
+		equipment_bonus = {
+			motorized_equipment = {
+				maximum_speed = 0.05	instant = yes
+
+				reliability = 0.05	instant = yes
+				
+				build_cost_ic = -0.05	instant = yes
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	
+	
+}

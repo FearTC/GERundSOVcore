@@ -1,0 +1,170 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_umc_goal_flag_turkey"
+		texturefile = "gfx/interface/goals/umc_goal_flag_turkey.dds"
+	}
+
+	spriteType = {
+		name = "GFX_umc_goal_flag_brazil"
+		texturefile = "gfx/interface/goals/umc_goal_flag_brazil.dds"
+	}
+
+	spriteType = {
+		name = "GFX_umc_goal_flag_italy"
+		texturefile = "gfx/interface/goals/umc_goal_flag_italy.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_umc_goal_flag_confederates"
+		texturefile = "gfx/interface/goals/umc_goal_flag_confederates.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_umc_goal_flag_russia"
+		texturefile = "gfx/interface/goals/umc_goal_flag_russia.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_umc_goal_flag_germano_austria"
+		texturefile = "gfx/interface/goals/umc_goal_flag_germano_austria.dds"
+	} 
+	
+	spriteType = {
+		name = "GFX_umc_goal_flag_poland"
+		texturefile = "gfx/interface/goals/umc_goal_flag_poland.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_umc_goal_flag_siam"
+		texturefile = "gfx/interface/goals/umc_goal_flag_siam.dds"
+	} 
+	
+	
+	
+	
+	spriteType = {
+		name = "GFX_umc_goal_strike_south"
+		texturefile = "gfx/interface/goals/umc_goal_strike_south.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_umc_goal_strike_north"
+		texturefile = "gfx/interface/goals/umc_goal_strike_north.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_umc_goal_kaiser_wilhelm"
+		texturefile = "gfx/interface/goals/umc_goal_kaiser_wilhelm.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_umc_goal_otto_von_bismarck"
+		texturefile = "gfx/interface/goals/umc_goal_otto_von_bismarck.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_umc_goal_goverment_hands"
+		texturefile = "gfx/interface/goals/umc_goal_goverment_hands.dds"		
+	}
+	
+	spriteType = {
+		name = "GFX_umc_goal_oil_excavation"
+		texturefile = "gfx/interface/goals/umc_goal_oil_excavation.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_umc_goal_storages"
+		texturefile = "gfx/interface/goals/umc_goal_storages.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_umc_goal_news"
+		texturefile = "gfx/interface/goals/umc_goal_news.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_umc_goal_gold_up"
+		texturefile = "gfx/interface/goals/umc_goal_gold_up.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_umc_goal_officers_command"
+		texturefile = "gfx/interface/goals/umc_goal_officers_command.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_umc_goal_japanese_glory"
+		texturefile = "gfx/interface/goals/umc_goal_japanese_glory.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_umc_goal_planning"
+		texturefile = "gfx/interface/goals/umc_goal_planning.dds"		
+	}
+	
+	spriteType = {
+		name = "GFX_umc_goal_warrior_traditions"
+		texturefile = "gfx/interface/goals/umc_goal_warrior_traditions.dds"		
+	}
+	
+	spriteType = {
+		name = "GFX_umc_goal_espionage_network"
+		texturefile = "gfx/interface/goals/umc_goal_espionage_network.dds"
+	}
+	
+	
+	
+	
+	spriteType = {
+		name = "GFX_umc_goal_mining_oil"
+		texturefile = "gfx/interface/goals/umc_goal_mining_oil.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_umc_goal_mining_steel"
+		texturefile = "gfx/interface/goals/umc_goal_mining_steel.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_umc_goal_mining_tungsten"
+		texturefile = "gfx/interface/goals/umc_goal_mining_tungsten.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_umc_goal_mining_aluminium"
+		texturefile = "gfx/interface/goals/umc_goal_mining_aluminium.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_umc_goal_mining_rubber"
+		texturefile = "gfx/interface/goals/umc_goal_mining_rubber.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_umc_goal_mining_chromium"
+		texturefile = "gfx/interface/goals/umc_goal_mining_chromium.dds"
+	}
+	
+	
+	spriteType = {
+		name = "GFX_umc_goal_jap_alaska"
+		texturefile = "gfx/interface/goals/umc_goal_jap_alaska.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_umc_goal_jap_attu_island"
+		texturefile = "gfx/interface/goals/umc_goal_jap_attu_island.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_umc_goal_jap_midway"
+		texturefile = "gfx/interface/goals/umc_goal_jap_midway.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_umc_goal_jap_wake_island"
+		texturefile = "gfx/interface/goals/umc_goal_jap_wake_island.dds"
+	}
+	
+}

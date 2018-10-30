@@ -1,0 +1,25 @@
+state = {
+	id=768
+	name= "STATE_768"
+	manpower= 250000
+	provinces= { 2117 7443 4216 12905 1208 13213 }
+	state_category = rural
+	resources={
+		rubber=31 
+		oil=10 
+	}
+
+	history = {
+		owner = SAR
+		add_core_of = SAR
+		victory_points = {
+			1208 1
+		}
+		buildings = {
+			infrastructure = 3
+			1208 = {
+				naval_base = 1
+			}
+		}
+	}
+}

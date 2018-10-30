@@ -1,0 +1,24 @@
+ideas = {
+
+	country = {
+	
+
+		RA_Financial_Help_I = {
+		
+			allowed = {
+				original_tag = RMA
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = free_trade
+			
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}

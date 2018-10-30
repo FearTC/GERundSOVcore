@@ -1,0 +1,1322 @@
+﻿add_namespace = umc_japan
+
+
+
+
+###################  TESTING BOI
+country_event = {
+	id = umc_japan.100000
+	title = umc_japan.100000.t
+	desc = umc_japan.100000.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {		######
+		name = umc_japan.100000.a
+		ai_chance = {
+			base = 1
+		}
+		
+		
+	}
+
+	option = {		######
+		name = umc_japan.100000.b
+		ai_chance = {
+			base = 0
+		}
+		
+		
+	}
+}
+
+
+################### Zaibatsus Korean Investment
+country_event = {
+	id = umc_japan.20
+	title = umc_japan.20.t
+	desc = umc_japan.20.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {		###### Invest in Civilian Sector
+		name = umc_japan.20.a
+		ai_chance = {
+			base = 1
+		}
+		
+		add_political_power = 50
+		
+		527 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		
+		525 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		
+		
+	}
+
+	option = {		###### Invest in Military Sector
+		name = umc_japan.20.b
+		ai_chance = {
+			base = 1
+		}
+		
+		527 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+			}
+		525 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+	}
+}
+
+
+
+
+################### Pearl Harbour
+country_event = {
+	id = umc_japan.10
+	title = umc_japan.10.t
+	desc = umc_japan.10.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {		###### Launch the attack!
+		name = umc_japan.10.a
+		ai_chance = {
+			base = 100
+		}
+		
+		629 = { 
+			damage_building = { type = infrastructure damage = 0.5 }
+			damage_building = { type = air_base damage = 1.5 }
+			damage_building = { type = naval_base damage = 3.5 province = 4180 }
+		}
+		
+		USA = { 
+			destroy_ships = { type = battleship count = 2 } 
+		
+			add_manpower = -1317
+			
+			add_war_support = 0.05
+			
+			add_ideas = JAP_USA_Pearl_Harbor_I1
+		}
+		
+		country_event = { id = umc_japan.11 hours = 1 }
+	}
+
+	option = {		###### Oh on second thought - friends maybe?
+		name = umc_japan.10.b
+		ai_chance = {
+			base = 0
+		}
+
+	}
+}
+
+country_event = {
+	id = umc_japan.11
+	title = umc_japan.11.t
+	desc = umc_japan.11.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {		###### Launch the attack!
+		name = umc_japan.11.a
+		ai_chance = {
+			base = 100
+		}
+		
+		629 = { 
+			damage_building = { type = infrastructure damage = 1.0 }
+			damage_building = { type = air_base damage = 2.5 }
+			damage_building = { type = naval_base damage = 2.5 province = 4180 }
+		}
+		
+		USA= { 
+			destroy_ships = { type = battleship count = 2 } 
+		
+			add_manpower = -1617
+			
+			add_war_support = 0.05	
+		
+			swap_ideas = { remove_idea = JAP_USA_Pearl_Harbor_I1 add_idea = JAP_USA_Pearl_Harbor_I2 }
+		}
+		
+		country_event = { id = umc_japan.12 hours = 1 }
+	}
+
+	option = {		###### Oh on second thought - friends maybe?
+		name = umc_japan.11.b
+		ai_chance = {
+			base = 0
+		}
+
+	}
+}
+
+country_event = {
+	id = umc_japan.12
+	title = umc_japan.12.t
+	desc = umc_japan.12.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {		###### Launch the attack!
+		name = umc_japan.12.a
+		ai_chance = {
+			base = 100
+		}
+		
+		JAP = { 
+			transfer_state = 629 
+			add_equipment_to_stockpile = { type = infantry_equipment amount = -50 producer = JAP }
+		}
+		
+		USA= { 
+			add_manpower = -3647
+
+			add_war_support = 0.05	
+			
+			swap_ideas = { remove_idea = JAP_USA_Pearl_Harbor_I2 add_idea = JAP_USA_Pearl_Harbor_I3 }
+		}
+	}
+	
+	option = {		###### Launch the attack!
+		name = umc_japan.12.a
+		ai_chance = {
+			base = 100
+		}
+		
+		629 = { 
+			damage_building = { type = infrastructure damage = 5.0 }
+			damage_building = { type = air_base damage = 5.0 }
+			damage_building = { type = naval_base damage = 5.0 province = 4180 }
+		}
+		
+		USA= { 
+			add_manpower = -8173
+			
+			add_timed_idea = { idea = JAP_USA_Pearl_Harbor_I4 days = 180 }
+			
+			add_war_support = 0.05	
+			
+			swap_ideas = { remove_idea = JAP_USA_Pearl_Harbor_I2 add_idea = JAP_USA_Pearl_Harbor_I3 }
+		}
+		
+	}
+
+	option = {		###### Oh on second thought - friends maybe?
+		name = umc_japan.12.c
+		ai_chance = {
+			base = 0
+		}
+
+	}
+}
+
+
+
+
+######################## SUPPORT FOR JAPAN
+country_event = {		###### For nations that they can support - USA
+	id = umc_japan.30
+	title = umc_japan.30.t
+	desc = umc_japan.30.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {		###### Provide Support
+		name = umc_japan.30.a
+		ai_chance = {
+			base = 3
+		}
+		
+		trigger = { 
+			NOT = { USA = { is_in_faction_with = SOV } }
+			NOT = { USA = { has_guaranteed  = SOV } }
+		}
+		
+		JAP = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1500
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 50
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 75
+				producer = USA
+			}
+			
+			add_equipment_to_stockpile = {
+				type = motorized_equipment_1
+				amount = 50
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = light_tank_equipment
+				amount = 35
+				producer = USA
+			}
+		}
+		
+		JAP = {
+			add_equipment_to_stockpile = {
+				type = fighter_equipment
+				amount = 15
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = CAS_equipment
+				amount = 15
+				producer = USA
+			}
+		}
+		
+			ai_strategy = {
+				type = befriend    
+				id = JAP       
+				value = 25
+			}
+			
+			ai_strategy = {
+				type = support    
+				id = JAP       
+				value = 25
+			}
+		
+		JAP = { country_event = { id = umc_japan.35 } }	
+	}
+
+	option = {		###### NOUP
+		name = umc_japan.30.b
+		ai_chance = {
+			base = 1
+		}
+		
+		
+	}
+}
+
+country_event = {		###### For nations that they can support - ENG
+	id = umc_japan.31
+	title = umc_japan.30.t
+	desc = umc_japan.30.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {		###### Provide Support
+		name = umc_japan.30.a
+		ai_chance = {
+			base = 3
+		}
+		
+		trigger = { 
+			NOT = { ENG = { is_in_faction_with = SOV } }  
+			NOT = { ENG = { has_guaranteed  = SOV } }
+		}
+		
+		JAP = {
+			add_equipment_to_stockpile = {
+				type = fighter_equipment
+				amount = 75
+				producer = ENG
+			}
+			add_equipment_to_stockpile = {
+				type = CAS_equipment
+				amount = 50
+				producer = ENG
+			}
+			add_equipment_to_stockpile = {
+				type = tac_bomber_equipment
+				amount = 50
+				producer = ENG
+			}
+		}
+		
+		ai_strategy = {
+			type = befriend    
+			id = JAP       
+			value = 25
+		}
+		
+		ai_strategy = {
+			type = support    
+			id = JAP       
+			value = 25
+		}
+		
+		effect_tooltip = {
+			diplomatic_relation = {
+				country = JAP
+				relation = non_aggression_pact
+				active = yes
+			}
+		}
+		
+		JAP = { country_event = { id = umc_japan.36 } }
+	}
+
+	option = {		###### NOUP
+		name = umc_japan.30.b
+		ai_chance = {
+			base = 1
+		}
+		
+		
+	}
+}
+
+country_event = {		###### For nations that they can support - FRA
+	id = umc_japan.32
+	title = umc_japan.30.t
+	desc = umc_japan.30.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {		###### Provide Support
+		name = umc_japan.30.a
+		ai_chance = {
+			base = 3
+		}
+		
+		trigger = { 
+			NOT = { FRA = { is_in_faction_with = SOV } }   
+			NOT = { FRA = { has_guaranteed  = SOV } }
+		}
+		
+		JAP = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 250
+				producer = FRA
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 15
+				producer = FRA
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 15
+				producer = FRA
+			}
+			
+			add_equipment_to_stockpile = {
+				type = motorized_equipment_1
+				amount = 125
+				producer = FRA
+			}
+			
+			add_equipment_to_stockpile = {
+				type = light_tank_equipment
+				amount = 125
+				producer = FRA
+			}
+		}
+		
+		JAP = {		
+			add_equipment_to_stockpile = {
+				type = tac_bomber_equipment
+				amount = 25
+				producer = FRA
+			}
+		}
+		
+		ai_strategy = {
+			type = befriend    
+			id = JAP       
+			value = 25
+		}
+		
+		ai_strategy = {
+			type = support    
+			id = JAP       
+			value = 25
+		}
+		
+		effect_tooltip = {
+			diplomatic_relation = {
+				country = JAP
+				relation = non_aggression_pact
+				active = yes
+			}
+		}
+		
+		JAP = { country_event = { id = umc_japan.37 } }
+	}
+
+	option = {		###### NOUP
+		name = umc_japan.30.b
+		ai_chance = {
+			base = 1
+		}
+		
+		
+	}
+}
+
+country_event = {		###### For nations that they can support - ITA
+	id = umc_japan.33
+	title = umc_japan.30.t
+	desc = umc_japan.30.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {		###### Provide Support
+		name = umc_japan.30.a
+		ai_chance = {
+			base = 3
+		}
+		
+		trigger = { 
+			NOT = { ITA = { is_in_faction_with = SOV } }
+			NOT = { ITA = { has_guaranteed = SOV } }
+		}
+		
+		JAP = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+				producer = ITA
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 50
+				producer = ITA
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 65
+				producer = ITA
+			}
+		}
+		
+		JAP = {
+			add_equipment_to_stockpile = {
+				type = fighter_equipment
+				amount = 30
+				producer = ITA
+			}
+			add_equipment_to_stockpile = {
+				type = CAS_equipment
+				amount = 15
+				producer = ITA
+			}
+			add_equipment_to_stockpile = {
+				type = tac_bomber_equipment
+				amount = 25
+				producer = ITA
+			}
+		}
+		
+		ai_strategy = {
+			type = befriend    
+			id = JAP       
+			value = 25
+		}
+		
+		ai_strategy = {
+			type = support    
+			id = JAP       
+			value = 25
+		}
+		
+		effect_tooltip = {
+			diplomatic_relation = {
+				country = JAP
+				relation = non_aggression_pact
+				active = yes
+			}
+		}
+		
+		JAP = { country_event = { id = umc_japan.38 } }
+	}
+
+	option = {		###### NOUP
+		name = umc_japan.30.b
+		ai_chance = {
+			base = 1
+		}
+		
+		
+	}
+}
+
+
+country_event = { 	###### For JAP from - USA
+	id = umc_japan.35
+	title = umc_japan.35.t
+	desc = umc_japan.35.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {		######
+		name = umc_japan.35.a
+		ai_chance = {
+			base = 1
+		}
+		
+		effect_tooltip = {
+			JAP = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 1500
+					producer = USA
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = 50
+					producer = USA
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = 75
+					producer = USA
+				}
+				
+				add_equipment_to_stockpile = {
+					type = motorized_equipment_1
+					amount = 50
+					producer = USA
+				}
+				add_equipment_to_stockpile = {
+					type = light_tank_equipment
+					amount = 35
+					producer = USA
+				}
+			}
+			
+			JAP = {
+				add_equipment_to_stockpile = {
+					type = fighter_equipment
+					amount = 15
+					producer = USA
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment
+					amount = 15
+					producer = USA
+				}
+			}
+			
+			diplomatic_relation = {
+				country = USA
+				relation = non_aggression_pact
+				active = yes
+			}
+		}
+	}
+}
+
+country_event = { 	###### For JAP from - ENG
+	id = umc_japan.36
+	title = umc_japan.36.t
+	desc = umc_japan.35.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {		######
+		name = umc_japan.35.a
+		ai_chance = {
+			base = 1
+		}
+		
+		effect_tooltip = {
+			JAP = {
+				add_equipment_to_stockpile = {
+					type = fighter_equipment
+					amount = 75
+					producer = ENG
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment
+					amount = 50
+					producer = ENG
+				}
+				add_equipment_to_stockpile = {
+					type = tac_bomber_equipment
+					amount = 50
+					producer = ENG
+				}
+			}
+			
+			diplomatic_relation = {
+				country = ENG
+				relation = non_aggression_pact
+				active = yes
+			}
+		}
+	}
+}
+
+country_event = { 	###### For JAP from - FRA
+	id = umc_japan.37
+	title = umc_japan.37.t
+	desc = umc_japan.35.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {		######
+		name = umc_japan.35.a
+		ai_chance = {
+			base = 1
+		}
+		
+		effect_tooltip = {
+			JAP = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 250
+					producer = FRA
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = 15
+					producer = FRA
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = 15
+					producer = FRA
+				}
+				
+				add_equipment_to_stockpile = {
+					type = motorized_equipment_1
+					amount = 125
+					producer = FRA
+				}
+				
+				add_equipment_to_stockpile = {
+					type = light_tank_equipment
+					amount = 125
+					producer = FRA
+				}
+			}
+			
+			JAP = {		
+				add_equipment_to_stockpile = {
+					type = tac_bomber_equipment
+					amount = 25
+					producer = FRA
+				}
+			}
+			
+			diplomatic_relation = {
+				country = FRA
+				relation = non_aggression_pact
+				active = yes
+			}
+		}
+	}
+}
+
+country_event = { 	###### For JAP from - ITA
+	id = umc_japan.38
+	title = umc_japan.38.t
+	desc = umc_japan.35.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {		######
+		name = umc_japan.35.a
+		ai_chance = {
+			base = 1
+		}
+		
+		effect_tooltip = {
+			JAP = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 1000
+					producer = ITA
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = 50
+					producer = ITA
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = 65
+					producer = ITA
+				}
+			}
+			
+			JAP = {
+				add_equipment_to_stockpile = {
+					type = fighter_equipment
+					amount = 30
+					producer = ITA
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment
+					amount = 15
+					producer = ITA
+				}
+				add_equipment_to_stockpile = {
+					type = tac_bomber_equipment
+					amount = 25
+					producer = ITA
+				}
+			}
+			
+			diplomatic_relation = {
+				country = ITA
+				relation = non_aggression_pact
+				active = yes
+			}
+		}
+	}
+}
+
+
+
+
+
+######################## Ultimatum to China
+country_event = {
+	id = umc_japan.40
+	title = umc_japan.40.t
+	desc = umc_japan.40.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {		##### We must subdue
+		name = umc_japan.40.a
+		ai_chance = {
+			base = 1
+		}
+		
+		add_stability = -0.15
+		add_war_support = -0.15
+		
+		JAP = { puppet = CHI }
+		
+		effect_tooltip = {
+			JAP = { 
+				transfer_state = 598 
+				transfer_state = 613 
+			}
+		}
+		
+		JAP = { country_event = { id = umc_japan.41 } }
+		
+		PRC = { country_event = { id = umc_japan.42 } }
+	}
+
+	option = {		##### We will resist!
+		name = umc_japan.40.b
+		ai_chance = {
+			base = 1
+		}
+		
+		effect_tooltip = {
+			JAP = { 
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = CHI
+				} 
+			}
+		}
+		
+		JAP = { country_event = { id = umc_japan.43 } }
+	}
+}
+
+country_event = {		##### For Japan that Chinese accepts
+	id = umc_japan.41
+	title = umc_japan.41.t
+	desc = umc_japan.41.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {		##### nice
+		name = umc_japan.41.a
+		ai_chance = {
+			base = 1
+		}
+		
+		transfer_state = 598
+		transfer_state = 613
+		
+		effect_tooltip = {
+			puppet = CHI 
+		}
+	}
+}
+
+country_event = {		##### For PRC that China is in deep shit
+	id = umc_japan.42
+	title = umc_japan.42.t
+	desc = umc_japan.42.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {		##### We must subdue
+		name = umc_japan.42.a
+		ai_chance = {
+			base = 1
+		}
+		
+		add_stability = 0.05
+		add_war_support = 0.15
+		add_manpower = 87195
+		
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 11590
+			producer = CHI
+		}
+		
+		add_offsite_building = { type = arms_factory level = 6 }
+	}
+}
+
+country_event = {		##### For Japan than Chinese reject.. BANZAAAAI
+	id = umc_japan.43
+	title = umc_japan.43.t
+	desc = umc_japan.43.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {		##### nice
+		name = umc_japan.43.a
+		ai_chance = {
+			base = 1
+		}
+		
+		JAP = { 
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = CHI
+			} 
+		}
+	}
+
+}
+
+
+############################### CHINESE ALIANCE
+country_event = {
+	id = umc_japan.50
+	title = umc_japan.50.t
+	desc = umc_japan.50.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {		###### Sure we will join
+		name = umc_japan.50.a
+		ai_chance = {
+			base = 2
+			
+			modifier = {
+				has_completed_focus = JAP_Chi_Extend_Friendship
+				factor = 5
+			}
+		}
+		
+		JAP  = {
+			add_to_faction = CHI
+		}
+		
+		JAP = { country_event = { id = umc_japan.51 } }
+	}
+
+	option = {		###### Nah man
+		name = umc_japan.50.b
+		ai_chance = {
+			base = 1
+		}
+		
+		JAP = { country_event = { id = umc_japan.52 } }
+	}
+}
+
+country_event = {		##### CHI accepts
+	id = umc_japan.51
+	title = umc_japan.51.t
+	desc = umc_japan.51.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {		######
+		name = umc_japan.51.a
+		ai_chance = {
+			base = 1
+		}
+		
+		add_political_power = 100
+		
+		effect_tooltip = {
+			JAP = {
+				add_to_faction = CHI
+			}
+		}
+	}
+
+}
+
+country_event = {		##### CHI rejects
+	id = umc_japan.52
+	title = umc_japan.52.t
+	desc = umc_japan.52.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {		######
+		name = umc_japan.52.a
+		ai_chance = {
+			base = 1
+		}
+		
+		add_political_power = -75
+		
+		add_opinion_modifier = {
+			target = CHI
+			modifier = JAP_chi_rejected_aliance
+		}
+	}
+}
+
+
+
+######################### EXTEND FRIENDSHIP
+country_event = {
+	id = umc_japan.60
+	title = umc_japan.60.t
+	desc = umc_japan.60.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {		###### That is... unnexpected
+		name = umc_japan.60.a
+		ai_chance = {
+			base = 1
+		}
+		
+		add_stability = 0.05
+		
+		transfer_state = 609
+		
+		puppet =  MEN
+		
+		
+		add_opinion_modifier = {
+			target = JAP
+			modifier = JAP_chi_extended_friendship
+		}
+	}
+
+	option = {		###### FUCK THEM ANYWAYS
+		name = umc_japan.60.b
+		ai_chance = {
+			base = 0
+		}
+		
+		add_stability = -0.05
+	}
+}
+
+country_event = {		##### CHI accepts
+	id = umc_japan.61
+	title = umc_japan.61.t
+	desc = umc_japan.61.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {		######
+		name = umc_japan.61.a
+		ai_chance = {
+			base = 1
+		}
+		
+		add_political_power = -50
+	}
+
+}
+
+country_event = {		##### CHI rejects
+	id = umc_japan.62
+	title = umc_japan.62.t
+	desc = umc_japan.62.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {		######
+		name = umc_japan.62.a
+		ai_chance = {
+			base = 1
+		}
+
+	}
+}
+
+
+
+######################### KODOHA / TOSEIHA
+country_event = {
+	id = umc_japan.70
+	title = wtt_japan.108.t
+	desc = wtt_japan.108.desc
+	picture = GFX_report_event_japanese_parade
+
+	is_triggered_only = yes
+	
+	option = {
+		name = wtt_japan.108.a
+		set_politics = { ruling_party = neutrality elections_allowed = no }
+		add_popularity = { ideology = neutrality popularity = 0.9 }
+		add_timed_idea = { idea = JAP_military_purges days = 90 }
+		create_country_leader = {
+			name = "Hirohito"
+			desc = "POLITICS_Hirohito_DESC"
+			picture = "Portrait_Japan_Hirohito.dds"
+			expire = "1989.1.1"
+			ideology = despotism
+			traits = {
+				warrior_code
+				emperor_showa
+			}
+			id = 700 #Hirohito
+		}
+		
+		hidden_effect = { news_event = { id = wtt_news.27 hours = 6 } }
+	}
+}
+
+country_event = {
+	id = umc_japan.75
+	title = umc_japan.75.t
+	desc = umc_japan.75.d
+	picture = GFX_report_event_japanese_parade
+
+	is_triggered_only = yes
+	
+	option = {
+		name = umc_japan.75.a
+		
+		
+	}
+}
+
+
+######################### ONE ALIANCE
+country_event = {			###### For Germany
+	id = umc_japan.80
+	title = umc_japan.80.t
+	desc = umc_japan.80.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {		###### Yes
+		name = umc_japan.80.a
+		ai_chance = {
+			base = 1
+		}
+		
+		add_to_faction = JAP
+		
+		JAP = { country_event = { id = umc_japan.81 } }
+	}
+
+	option = {		######
+		name = umc_japan.80.b
+		ai_chance = {
+			base = 1
+		}
+		
+		JAP = { country_event = { id = umc_japan.82 } }
+	}
+}
+
+country_event = {		###### GER said yes
+	id = umc_japan.81
+	title = umc_japan.81.t
+	desc = umc_japan.81.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {		######
+		name = umc_japan.81.a
+		ai_chance = {
+			base = 1
+		}
+		
+		add_war_support = 0.05
+		
+		effect_tooltip = {
+			GER = { add_to_faction = JAP }
+		}
+	}
+}
+
+country_event = {		###### GER said no
+	id = umc_japan.82
+	title = umc_japan.82.t
+	desc = umc_japan.82.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {		######
+		name = umc_japan.82.a
+		ai_chance = {
+			base = 1
+		}
+		
+		add_political_power = -50
+	}
+}
+
+
+######################### Claim the EAST
+country_event = {			##### For the Soviets
+	id = umc_japan.90
+	title = umc_japan.90.t
+	desc = umc_japan.90.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {		######
+		name = umc_japan.90.a
+		ai_chance = {
+			base = 5
+		}
+		
+		add_stability = -0.15
+		add_war_support = -0.15
+		
+		white_peace = JAP
+		
+		custom_effect_tooltip = JAP_Claim_East_Event_DESC
+	}
+
+	option = {		######
+		name = umc_japan.90.b
+		ai_chance = {
+			base = 1
+		}
+		
+		
+	}
+}
+
+country_event = {		###### SOV accepts
+	id = umc_japan.91
+	title = umc_japan.91.t
+	desc = umc_japan.91.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {		######
+		name = umc_japan.91.a
+		ai_chance = {
+			base = 1
+		}
+		
+		add_political_power = 150
+		add_stability = 0.05
+		add_war_support = 0.05
+		
+		effect_tooltip = {
+			white_peace = SOV
+		}
+	}
+
+}
+
+country_event = {		###### SOV rejects
+	id = umc_japan.92
+	title = umc_japan.92.t
+	desc = umc_japan.92.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {		######
+		name = umc_japan.92.a
+		ai_chance = {
+			base = 1
+		}
+		
+		add_war_support = 0.05
+	}
+
+}

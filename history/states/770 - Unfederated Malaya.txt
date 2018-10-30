@@ -1,0 +1,27 @@
+state = {
+	id=770
+	name= "STATE_770"
+	manpower = 433000
+	provinces= { 12144 1291 10313 4424 10227 7329 1348 7399 4355 12199 }
+	state_category = rural
+	
+	resources={
+		rubber=114
+		steel=4
+		tungsten=47
+	}
+
+	history = {
+		owner = MAL
+		add_core_of = MAL
+		victory_points = {
+			7329 1 
+		}
+		buildings = {
+			7329 = {
+				naval_base = 1
+			}
+			infrastructure = 3
+		}
+	}
+}

@@ -1,0 +1,152 @@
+spriteTypes = {	
+
+	spriteType = {
+		name = "GFX_ger_goal_nazi_steel"
+		texturefile = "gfx/interface/goals/ger_goal_nazi_steel.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ger_goal_signed_treaty"
+		texturefile = "gfx/interface/goals/ger_goal_signed_treaty.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ger_goal_goverment_hands"
+		texturefile = "gfx/interface/goals/ger_goal_goverment_hands.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ger_goal_economical_control"
+		texturefile = "gfx/interface/goals/ger_goal_economical_control.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ger_goal_ss"
+		texturefile = "gfx/interface/goals/ger_goal_ss.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ger_goal_danzig_or_war"
+		texturefile = "gfx/interface/goals/ger_goal_danzig_or_war.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ger_goal_infra_build"
+		texturefile = "gfx/interface/goals/ger_goal_infra_build.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ger_goal_nazi_europe"
+		texturefile = "gfx/interface/goals/ger_goal_nazi_europe.dds"
+	}
+
+
+	
+	
+
+
+
+
+
+
+	spriteType = {
+		name = "GFX_goal_tungsten_mining"
+		texturefile = "gfx/interface/goals/Goal_Tungsten_Mining.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_steel_mining"
+		texturefile = "gfx/interface/goals/Goal_Steel_Mining.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_goal_rubber_mining"
+		texturefile = "gfx/interface/goals/Goal_Rubber_Mining.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_goal_chromium_mining"
+		texturefile = "gfx/interface/goals/Goal_Chromium_Mining.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_goal_aluminium_mining"
+		texturefile = "gfx/interface/goals/Goal_Aluminium_Mining.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_goal_oil_mining"
+		texturefile = "gfx/interface/goals/Goal_Oil_Mining.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_forced_mining"
+		texturefile = "gfx/interface/goals/Goal_Forced_Mining.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_goal_all_resources"
+		texturefile = "gfx/interface/goals/Goal_All_Resources.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_resources_trade"
+		texturefile = "gfx/interface/goals/Goal_Resources_Trade.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_refugees"
+		texturefile = "gfx/interface/goals/Goal_Refugees.dds"
+	}	
+
+	spriteType = {
+		name = "GFX_planning"
+		texturefile = "gfx/interface/goals/Goal_Planning.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_nationalism"
+		texturefile = "gfx/interface/goals/Goal_Nationalism.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_bulding"
+		texturefile = "gfx/interface/goals/Goal_Building.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_secret_police"
+		texturefile = "gfx/interface/goals/Goal_Secret_Police.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_banks"
+		texturefile = "gfx/interface/goals/Goal_Banks.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_germania"
+		texturefile = "gfx/interface/goals/goal_Germania.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_recruitment"
+		texturefile = "gfx/interface/goals/Goal_Recruitment.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_me_jet"
+		texturefile = "gfx/interface/goals/Goal_Jet_Me.dds"
+	}
+	
+	
+	
+	
+	spriteType = {
+		name = "GFX_portrait_reinhard_heydrich"
+		texturefile = "gfx/leaders/GER/Portrait_Germany_Reinhard_Heydrich.dds"		
+	}
+	
+	
+	
+}

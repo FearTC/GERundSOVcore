@@ -1,0 +1,1903 @@
+###########################
+# Generic Events
+###########################	
+#####	ROOT - the faction currently answering/using the event
+#####	FROM - the faction the event is (hopefuly LOL)
+
+add_namespace = umc_gen
+
+###########################
+
+country_event = {	### 
+	id = umc_gen.15618915168154121				
+	title = umc_gen.15618915168154121.t			
+	desc = umc_gen.15618915168154121.d		
+	
+	picture = GFX_report_event_german_speech
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { ### 
+		name = umc_gen.15618915168154121.a
+		ai_chance = { base = 65 }
+		
+		
+	}
+	
+	option = { ### 
+		name = umc_gen.15618915168154121.b
+		ai_chance = { base = 35 }
+		
+		
+	}
+	
+}
+
+
+country_event = {
+	id = umc_gen.100
+	title = DOD_hungary.150.t
+	desc = DOD_hungary.150.desc 
+	picture = GFX_report_event_fighters 
+	
+	is_triggered_only = yes
+
+	option = {# light fighter
+		name = DOD_hungary.150.a
+		trigger = {
+			OR = {
+				GER = {
+					is_available_fighter_ROOT = yes
+				}
+				FRA = {
+					is_available_fighter_ROOT = yes
+				}
+				ITA = {
+					is_available_fighter_ROOT = yes
+				}
+				ENG = {
+					is_available_fighter_ROOT = yes
+				}
+				USA = {
+					is_available_fighter_ROOT = yes
+				}
+			}
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_tech = fighter1
+				add = -10
+			}
+			modifier = {
+				has_tech = fighter2
+				add = -10
+			}
+			modifier = {
+				has_tech = fighter3
+				factor = 0
+			}
+		}
+		country_event = umc_gen.110 
+		
+	}
+
+	option = {# heavy fighter
+		name = DOD_hungary.150.b
+		trigger = {
+			OR = {
+				GER = {
+					is_available_heavy_fighter_ROOT = yes
+				}
+				FRA = {
+					is_available_heavy_fighter_ROOT = yes
+				}
+				ITA = {
+					is_available_heavy_fighter_ROOT = yes
+				}
+				ENG = {
+					is_available_heavy_fighter_ROOT = yes
+				}
+				USA = {
+					is_available_heavy_fighter_ROOT = yes
+				}
+			}
+		}
+		country_event = umc_gen.130
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_tech = heavy_fighter1
+				add = -10
+			}
+			modifier = {
+				has_tech = heavy_fighter2
+				add = -10
+			}
+			modifier = {
+				has_tech = heavy_fighter3
+				factor = 0
+			}
+		}
+	}
+}
+
+
+
+country_event = {
+	id = umc_gen.110
+	title = DOD_hungary.151.t
+	desc = {
+		text = DOD_hungary.151.desc_light_fighter
+		trigger = {
+			NOT = { 
+				has_country_flag = GER_fighter_refused
+				has_country_flag = ENG_fighter_refused
+				has_country_flag = USA_fighter_refused
+				has_country_flag = FRA_fighter_refused
+				has_country_flag = ITA_fighter_refused
+			} 
+		}
+	}
+	desc = {
+		text = DOD_hungary.151.desc_light_fighter_refused
+		trigger = {
+			OR = {
+		 		has_country_flag = GER_fighter_refused
+				has_country_flag = ENG_fighter_refused
+				has_country_flag = USA_fighter_refused
+				has_country_flag = FRA_fighter_refused
+				has_country_flag = ITA_fighter_refused
+		 	}
+		}
+	}
+	picture = GFX_report_event_fighters
+	
+	is_triggered_only = yes
+
+	option = {# Select German Plane
+		name = DOD_hungary.151.a
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = GER
+				factor = 10
+			}
+			modifier = {
+				GER = { has_government = ROOT }
+				factor = 2
+			}
+			modifier = {
+				GER = {
+					has_tech = fighter1
+				}
+				add = 10
+			}
+			modifier = {
+				GER = {
+					has_tech = fighter2
+				}
+				add = 10
+			}
+			modifier = {
+				GER = {
+					has_tech = fighter3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					GER = { has_tech = fighter1}
+					ROOT = { NOT = { has_tech = fighter1 } }
+				}
+				AND = {
+					GER = { has_tech = fighter2}
+					ROOT = { NOT = { has_tech = fighter2 } }
+				}
+				AND = {
+					GER = { has_tech = fighter3}
+					ROOT = { NOT = { has_tech = fighter3 } }
+				}
+			}
+			NOT = { has_war_with = GER }
+			NOT = { has_country_flag = GER_fighter_refused }
+		}
+		GER = { country_event = umc_gen.120 }	
+	}
+
+	option = {# select italian plane
+		name = DOD_hungary.151.b
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = ITA
+				factor = 10
+			}
+			modifier = {
+				ITA = { has_government = ROOT }
+				factor = 2
+			}
+			modifier = {
+				ITA = {
+					has_tech = fighter1
+				}
+				add = 10
+			}
+			modifier = {
+				ITA = {
+					has_tech = fighter2
+				}
+				add = 10
+			}
+			modifier = {
+				ITA = {
+					has_tech = fighter3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					ITA = { has_tech = fighter1}
+					ROOT = { NOT = { has_tech = fighter1 } }
+				}
+				AND = {
+					ITA = { has_tech = fighter2}
+					ROOT = { NOT = { has_tech = fighter2 } }
+				}
+				AND = {
+					ITA = { has_tech = fighter3}
+					ROOT = { NOT = { has_tech = fighter3 } }
+				}
+			}
+			NOT = { has_war_with = ITA }
+			NOT = { has_country_flag = ITA_fighter_refused }
+		}
+		ITA = { country_event = umc_gen.120 }	
+	}
+
+	option = {# select french plane
+		name = DOD_hungary.151.c
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = FRA
+				factor = 10
+			}
+			modifier = {
+				FRA = { has_government = ROOT }
+				factor = 2
+			}
+			modifier = {
+				FRA = {
+					has_tech = fighter1
+				}
+				add = 10
+			}
+			modifier = {
+				FRA = {
+					has_tech = fighter2
+				}
+				add = 10
+			}
+			modifier = {
+				FRA = {
+					has_tech = fighter3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					FRA = { has_tech = fighter1}
+					ROOT = { NOT = { has_tech = fighter1 } }
+				}
+				AND = {
+					FRA = { has_tech = fighter2}
+					ROOT = { NOT = { has_tech = fighter2 } }
+				}
+				AND = {
+					FRA = { has_tech = fighter3}
+					ROOT = { NOT = { has_tech = fighter3 } }
+				}
+			}
+			NOT = { has_war_with = FRA }
+			NOT = { has_country_flag = FRA_fighter_refused }
+			
+		}
+		FRA = { country_event = umc_gen.120 }	
+	}
+	option = {# select british plane
+		name = DOD_hungary.151.d
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = ENG
+				factor = 10
+			}
+			modifier = {
+				ENG = { has_government = ROOT }
+				factor = 2
+			}
+			modifier = {
+				ENG = {
+					has_tech = fighter1
+				}
+				add = 10
+			}
+			modifier = {
+				ENG = {
+					has_tech = fighter2
+				}
+				add = 10
+			}
+			modifier = {
+				ENG = {
+					has_tech = fighter3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					ENG = { has_tech = fighter1}
+					ROOT = { NOT = { has_tech = fighter1 } }
+				}
+				AND = {
+					ENG = { has_tech = fighter2}
+					ROOT = { NOT = { has_tech = fighter2 } }
+				}
+				AND = {
+					ENG = { has_tech = fighter3}
+					ROOT = { NOT = { has_tech = fighter3 } }
+				}
+			}
+			NOT = { has_war_with = ENG }
+			NOT = { has_country_flag = ENG_fighter_refused }
+		}
+		ENG = { country_event = umc_gen.120 }	
+	}
+	option = {# select american plane
+		name = DOD_hungary.151.e
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = USA
+				factor = 10
+			}
+			modifier = {
+				USA = { has_government = ROOT }
+				factor = 2
+			}
+			modifier = {
+				USA = {
+					has_tech = fighter1
+				}
+				add = 10
+			}
+			modifier = {
+				USA = {
+					has_tech = fighter2
+				}
+				add = 10
+			}
+			modifier = {
+				USA = {
+					has_tech = fighter3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					USA = { has_tech = fighter1}
+					ROOT = { NOT = { has_tech = fighter1 } }
+				}
+				AND = {
+					USA = { has_tech = fighter2}
+					ROOT = { NOT = { has_tech = fighter2 } }
+				}
+				AND = {
+					USA = { has_tech = fighter3}
+					ROOT = { NOT = { has_tech = fighter3 } }
+				}
+			}
+			NOT = { has_war_with = USA }
+			NOT = { has_country_flag = USA_fighter_refused }
+			NOT = { #to prevent overflow issues
+				AND = {
+					GER = {
+						is_available_fighter_ROOT = yes
+					}
+					FRA = {
+						is_available_fighter_ROOT = yes
+					}
+					ITA = {
+						is_available_fighter_ROOT = yes
+					}
+					ENG = {
+						is_available_fighter_ROOT = yes
+					}
+				}
+			}
+		}
+		USA = { country_event = umc_gen.120 }	
+	}
+	option = {# failsafe
+		name = DOD_hungary.151.f	
+		trigger = {
+			OR = {
+				has_country_flag = GER_fighter_refused
+				has_country_flag = ITA_fighter_refused
+				has_country_flag = ENG_fighter_refused
+				has_country_flag = FRA_fighter_refused
+				has_country_flag = USA_fighter_refused
+			}
+		}
+		air_experience = 50
+	}
+}
+
+country_event = {
+	id = umc_gen.120
+	title = DOD_hungary.153.t
+	desc = DOD_hungary.153.desc 
+	picture = GFX_report_event_fighters
+	
+	is_triggered_only = yes
+
+	option = {# certainly
+		name = DOD_hungary.153.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				has_war = yes
+				factor = 0.5
+			}
+		}
+		FROM = { country_event = DOD_hungary.155 }
+		air_experience = 20
+		if = {
+			limit = {
+				has_tech = fighter1
+				NOT = { has_tech = fighter2 }
+			}
+			create_production_license = {
+				target = FROM 
+				equipment = {
+					type = fighter_equipment_1
+					
+				}
+				cost_factor = 0
+			}
+		}
+		if = {
+			limit = {
+				has_tech = fighter2
+				NOT = { has_tech = fighter3 }
+			}
+			create_production_license = {
+				target = FROM 
+				equipment = {
+					type = fighter_equipment_2
+				}
+				cost_factor = 0
+			}
+		}
+		if = {
+			limit = {
+				has_tech = fighter3
+			}
+			create_production_license = {
+				target = FROM 
+				equipment = {
+					type = fighter_equipment_3
+				}
+				cost_factor = 0
+			}
+		}
+	}
+
+	option = {# no
+		name = DOD_hungary.153.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				is_in_faction_with = FROM
+				factor = 0
+			}
+		}
+		if = {
+			limit = { tag = GER }
+			FROM = { set_country_flag = GER_fighter_refused }
+		}
+		if = {
+			limit = { tag = ITA }
+			FROM = { set_country_flag = ITA_fighter_refused }
+		}
+		if = {
+			limit = { tag = FRA }
+			FROM = { set_country_flag = FRA_fighter_refused }
+		}
+		if = {
+			limit = { tag = ENG }
+			FROM = { set_country_flag = ENG_fighter_refused }
+		}
+		if = {
+			limit = { tag = USA }
+			FROM = { set_country_flag = USA_fighter_refused }
+		}
+		FROM = { country_event = umc_gen.110 }
+		reverse_add_opinion_modifier = { target = FROM modifier = refused_help }
+	}
+}
+
+
+
+country_event = {
+	id = umc_gen.130
+	title = DOD_hungary.152.t
+	desc = {
+		text = DOD_hungary.152.desc_heavy_fighter
+		trigger = {
+			NOT = { 
+				has_country_flag = GER_heavy_fighter_refused
+				has_country_flag = ENG_heavy_fighter_refused
+				has_country_flag = USA_heavy_fighter_refused
+				has_country_flag = FRA_heavy_fighter_refused
+				has_country_flag = ITA_heavy_fighter_refused
+			} 
+		}
+	}
+	desc = {
+		text = DOD_hungary.152.desc_heavy_fighter_refused
+		trigger = {
+			OR = {
+		 		has_country_flag = GER_heavy_fighter_refused
+				has_country_flag = ENG_heavy_fighter_refused
+				has_country_flag = USA_heavy_fighter_refused
+				has_country_flag = FRA_heavy_fighter_refused
+				has_country_flag = ITA_heavy_fighter_refused
+		 	}
+		}
+	}
+	picture = GFX_report_event_fighters
+	
+	is_triggered_only = yes
+
+	option = {# Select German Plane
+		name = DOD_hungary.151.a
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = GER
+				factor = 10
+			}
+			modifier = {
+				GER = { has_government = ROOT }
+				factor = 2
+			}
+			modifier = {
+				GER = {
+					has_tech = heavy_fighter1
+				}
+				add = 10
+			}
+			modifier = {
+				GER = {
+					has_tech = heavy_fighter2
+				}
+				add = 10
+			}
+			modifier = {
+				GER = {
+					has_tech = heavy_fighter3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					GER = { has_tech = heavy_fighter1}
+					ROOT = { NOT = { has_tech = heavy_fighter1 } }
+				}
+				AND = {
+					GER = { has_tech = heavy_fighter2}
+					ROOT = { NOT = { has_tech = heavy_fighter2 } }
+				}
+				AND = {
+					GER = { has_tech = heavy_fighter3}
+					ROOT = { NOT = { has_tech = heavy_fighter3 } }
+				}
+			}
+			NOT = { has_war_with = GER }
+			NOT = { has_country_flag = GER_heavy_fighter_refused }
+		}
+		GER = { country_event = umc_gen.140 }	
+	}
+
+	option = {# select italian plane
+		name = DOD_hungary.151.b
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = ITA
+				factor = 10
+			}
+			modifier = {
+				ITA = { has_government = ROOT }
+				factor = 2
+			}
+			modifier = {
+				ITA = {
+					has_tech = heavy_fighter1
+				}
+				add = 10
+			}
+			modifier = {
+				ITA = {
+					has_tech = heavy_fighter2
+				}
+				add = 10
+			}
+			modifier = {
+				ITA = {
+					has_tech = heavy_fighter3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					ITA = { has_tech = heavy_fighter1}
+					ROOT = { NOT = { has_tech = heavy_fighter1 } }
+				}
+				AND = {
+					ITA = { has_tech = heavy_fighter2}
+					ROOT = { NOT = { has_tech = heavy_fighter2 } }
+				}
+				AND = {
+					ITA = { has_tech = heavy_fighter3}
+					ROOT = { NOT = { has_tech = heavy_fighter3 } }
+				}
+			}
+			NOT = { has_war_with = ITA }
+			NOT = { has_country_flag = ITA_heavy_fighter_refused }
+		}
+		ITA = { country_event = umc_gen.140 }	
+	}
+
+	option = {# select french plane
+		name = DOD_hungary.151.c
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = FRA
+				factor = 10
+			}
+			modifier = {
+				FRA = { has_government = ROOT }
+				factor = 2
+			}
+			modifier = {
+				FRA = {
+					has_tech = heavy_fighter1
+				}
+				add = 10
+			}
+			modifier = {
+				FRA = {
+					has_tech = heavy_fighter2
+				}
+				add = 10
+			}
+			modifier = {
+				FRA = {
+					has_tech = heavy_fighter3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					FRA = { has_tech = heavy_fighter1}
+					ROOT = { NOT = { has_tech = heavy_fighter1 } }
+				}
+				AND = {
+					FRA = { has_tech = heavy_fighter2}
+					ROOT = { NOT = { has_tech = heavy_fighter2 } }
+				}
+				AND = {
+					FRA = { has_tech = heavy_fighter3}
+					ROOT = { NOT = { has_tech = heavy_fighter3 } }
+				}
+			}
+			NOT = { has_war_with = FRA }
+			NOT = { has_country_flag = FRA_heavy_fighter_refused }
+			
+		}
+		FRA = { country_event = umc_gen.140 }	
+	}
+	option = {# select british plane
+		name = DOD_hungary.151.d
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = ENG
+				factor = 10
+			}
+			modifier = {
+				ENG = { has_government = ROOT }
+				factor = 2
+			}
+			modifier = {
+				ENG = {
+					has_tech = heavy_fighter1
+				}
+				add = 10
+			}
+			modifier = {
+				ENG = {
+					has_tech = heavy_fighter2
+				}
+				add = 10
+			}
+			modifier = {
+				ENG = {
+					has_tech = heavy_fighter3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					ENG = { has_tech = heavy_fighter1}
+					ROOT = { NOT = { has_tech = heavy_fighter1 } }
+				}
+				AND = {
+					ENG = { has_tech = heavy_fighter2}
+					ROOT = { NOT = { has_tech = heavy_fighter2 } }
+				}
+				AND = {
+					ENG = { has_tech = heavy_fighter3}
+					ROOT = { NOT = { has_tech = heavy_fighter3 } }
+				}
+			}
+			NOT = { has_war_with = ENG }
+			NOT = { has_country_flag = ENG_heavy_fighter_refused }
+		}
+		ENG = { country_event = umc_gen.140 }	
+	}
+	option = {# select american plane
+		name = DOD_hungary.151.e
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = USA
+				factor = 10
+			}
+			modifier = {
+				USA = { has_government = ROOT }
+				factor = 2
+			}
+			modifier = {
+				USA = {
+					has_tech = heavy_fighter1
+				}
+				add = 10
+			}
+			modifier = {
+				USA = {
+					has_tech = heavy_fighter2
+				}
+				add = 10
+			}
+			modifier = {
+				USA = {
+					has_tech = heavy_fighter3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					USA = { has_tech = heavy_fighter1}
+					ROOT = { NOT = { has_tech = heavy_fighter1 } }
+				}
+				AND = {
+					USA = { has_tech = heavy_fighter2}
+					ROOT = { NOT = { has_tech = heavy_fighter2 } }
+				}
+				AND = {
+					USA = { has_tech = heavy_fighter3}
+					ROOT = { NOT = { has_tech = heavy_fighter3 } }
+				}
+			}
+			NOT = { has_war_with = USA }
+			NOT = { has_country_flag = USA_heavy_fighter_refused }
+			NOT = { #to prevent overflow issues
+				AND = {
+					GER = {
+						is_available_heavy_fighter_ROOT = yes
+					}
+					FRA = {
+						is_available_heavy_fighter_ROOT = yes
+					}
+					ITA = {
+						is_available_heavy_fighter_ROOT = yes
+					}
+					ENG = {
+						is_available_heavy_fighter_ROOT = yes
+					}
+				}
+			}
+		}
+		USA = { country_event = umc_gen.140 }	
+	}
+	option = {# failsafe
+		name = DOD_hungary.151.f	
+		trigger = {
+			OR = {
+				has_country_flag = GER_heavy_fighter_refused
+				has_country_flag = ITA_heavy_fighter_refused
+				has_country_flag = ENG_heavy_fighter_refused
+				has_country_flag = FRA_heavy_fighter_refused
+				has_country_flag = USA_heavy_fighter_refused
+			}
+		}
+		air_experience = 50
+	}
+
+}
+
+country_event = {
+	id = umc_gen.140
+	title = DOD_hungary.153.t
+	desc = DOD_hungary.154.desc 
+	picture = GFX_report_event_fighters
+	
+	is_triggered_only = yes
+
+	option = {# certainly
+		name = DOD_hungary.153.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				has_war = yes
+				factor = 0.5
+			}
+		}
+		
+		air_experience = 20
+		
+		FROM = { country_event = DOD_hungary.155 }
+		if = {
+			limit = {
+				has_tech = heavy_fighter1
+				NOT = { has_tech = heavy_fighter2 }
+			}
+			create_production_license = {
+				target = FROM 
+				equipment = {
+					type = heavy_fighter_equipment_1
+				}
+				cost_factor = 0
+			}
+		}
+		if = {
+			limit = {
+				has_tech = heavy_fighter2
+				NOT = { has_tech = heavy_fighter3 }
+			}
+			create_production_license = {
+				target = FROM 
+				equipment = {
+					type = heavy_fighter_equipment_2	
+				}
+				cost_factor = 0
+			}
+		}
+		if = {
+			limit = {
+				has_tech = heavy_fighter3
+			}
+			create_production_license = {
+				target = FROM 
+				equipment = {
+					type = heavy_fighter_equipment_3
+				}
+				cost_factor = 0
+			}
+		}
+		
+	}
+
+	option = {# no
+		name = DOD_hungary.153.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				is_in_faction_with = FROM
+				factor = 0
+			}
+		}
+		if = {
+			limit = { tag = GER }
+			FROM = { set_country_flag = GER_heavy_fighter_refused }
+		}
+		if = {
+			limit = { tag = ITA }
+			FROM = { set_country_flag = ITA_heavy_fighter_refused }
+		}
+		if = {
+			limit = { tag = FRA }
+			FROM = { set_country_flag = FRA_heavy_fighter_refused }
+		}
+		if = {
+			limit = { tag = ENG }
+			FROM = { set_country_flag = ENG_heavy_fighter_refused }
+		}
+		if = {
+			limit = { tag = USA }
+			FROM = { set_country_flag = USA_heavy_fighter_refused }
+		}
+		FROM = { country_event = umc_gen.130 }
+		reverse_add_opinion_modifier = { target = FROM modifier = refused_help }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+country_event = {
+	id = umc_gen.200
+	title = DOD_hungary.160.t
+	desc = DOD_hungary.160.desc 
+	picture = GFX_report_event_generic_bombers
+	
+	is_triggered_only = yes
+
+	option = {# CAS
+		name = DOD_hungary.160.a
+		trigger = {
+			OR = {
+				GER = {
+					is_available_cas_ROOT = yes
+				}
+				FRA = {
+					is_available_cas_ROOT = yes
+				}
+				ITA = {
+					is_available_cas_ROOT = yes
+				}
+				ENG = {
+					is_available_cas_ROOT = yes
+				}
+				USA = {
+					is_available_cas_ROOT = yes
+				}
+			}
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_tech = CAS1
+				add = -10
+			}
+			modifier = {
+				has_tech = CAS2
+				add = -10
+			}
+			modifier = {
+				has_tech = CAS3
+				factor = 0
+			}
+		}
+		country_event = umc_gen.210	
+	}
+
+	option = {# TAC
+		name = DOD_hungary.160.b
+		trigger = {
+			OR = {
+				GER = {
+					is_available_tac_ROOT = yes
+				}
+				FRA = {
+					is_available_tac_ROOT = yes
+				}
+				ITA = {
+					is_available_tac_ROOT = yes
+				}
+				ENG = {
+					is_available_tac_ROOT = yes
+				}
+				USA = {
+					is_available_tac_ROOT = yes
+				}
+			}
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_tech = tactical_bomber1
+				add = -10
+			}
+			modifier = {
+				has_tech = tactical_bomber2
+				add = -10
+			}
+			modifier = {
+				has_tech = tactical_bomber3
+				factor = 0
+			}
+		}
+		country_event = umc_gen.250
+	}
+}
+
+#Bomber competition - Hungary is looking for a CAS
+country_event = {
+	id = umc_gen.210
+	title = DOD_hungary.161.t
+	desc = {
+		text = DOD_hungary.161.desc_cas
+		trigger = {
+			NOT = { 
+				has_country_flag = GER_CAS_refused
+				has_country_flag = ENG_CAS_refused
+				has_country_flag = USA_CAS_refused
+				has_country_flag = FRA_CAS_refused
+				has_country_flag = ITA_CAS_refused
+			} 
+		}
+	}
+	desc = {
+		text = DOD_hungary.161.desc_cas_refused
+		trigger = {
+			OR = {
+		 		has_country_flag = GER_CAS_refused
+				has_country_flag = ENG_CAS_refused
+				has_country_flag = USA_CAS_refused
+				has_country_flag = FRA_CAS_refused
+				has_country_flag = ITA_CAS_refused
+		 	}
+		}
+	}
+	picture = GFX_report_event_generic_bombers
+	
+	is_triggered_only = yes
+
+	option = {# Select German Plane
+		name = DOD_hungary.151.a
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = GER
+				factor = 10
+			}
+			modifier = {
+				GER = { has_government = ROOT }
+				factor = 2
+			}
+			modifier = {
+				GER = {
+					has_tech = CAS1
+				}
+				add = 10
+			}
+			modifier = {
+				GER = {
+					has_tech = CAS2
+				}
+				add = 10
+			}
+			modifier = {
+				GER = {
+					has_tech = CAS3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					GER = { has_tech = CAS1}
+					ROOT = { NOT = { has_tech = CAS1 } }
+				}
+				AND = {
+					GER = { has_tech = CAS2}
+					ROOT = { NOT = { has_tech = CAS2 } }
+				}
+				AND = {
+					GER = { has_tech = CAS3}
+					ROOT = { NOT = { has_tech = CAS3 } }
+				}
+			}
+			NOT = { has_war_with = GER }
+			NOT = { has_country_flag = GER_CAS_refused }
+		}
+		GER = { country_event = umc_gen.220 }	
+	}
+
+	option = {# select italian plane
+		name = DOD_hungary.151.b
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = ITA
+				factor = 10
+			}
+			modifier = {
+				ITA = { has_government = ROOT }
+				factor = 2
+			}
+			modifier = {
+				ITA = {
+					has_tech = CAS1
+				}
+				add = 10
+			}
+			modifier = {
+				ITA = {
+					has_tech = CAS2
+				}
+				add = 10
+			}
+			modifier = {
+				ITA = {
+					has_tech = CAS3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					ITA = { has_tech = CAS1}
+					ROOT = { NOT = { has_tech = CAS1 } }
+				}
+				AND = {
+					ITA = { has_tech = CAS2}
+					ROOT = { NOT = { has_tech = CAS2 } }
+				}
+				AND = {
+					ITA = { has_tech = CAS3}
+					ROOT = { NOT = { has_tech = CAS3 } }
+				}
+			}
+			NOT = { has_war_with = ITA }
+			NOT = { has_country_flag = ITA_CAS_refused }
+		}
+		ITA = { country_event = umc_gen.220 }	
+	}
+
+	option = {# select french plane
+		name = DOD_hungary.151.c
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = FRA
+				factor = 10
+			}
+			modifier = {
+				FRA = { has_government = ROOT }
+				factor = 2
+			}
+			modifier = {
+				FRA = {
+					has_tech = CAS1
+				}
+				add = 10
+			}
+			modifier = {
+				FRA = {
+					has_tech = CAS2
+				}
+				add = 10
+			}
+			modifier = {
+				FRA = {
+					has_tech = CAS3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					FRA = { has_tech = CAS1}
+					ROOT = { NOT = { has_tech = CAS1 } }
+				}
+				AND = {
+					FRA = { has_tech = CAS2}
+					ROOT = { NOT = { has_tech = CAS2 } }
+				}
+				AND = {
+					FRA = { has_tech = CAS3}
+					ROOT = { NOT = { has_tech = CAS3 } }
+				}
+			}
+			NOT = { has_war_with = FRA }
+			NOT = { has_country_flag = FRA_CAS_refused }
+		}
+		FRA = { country_event = umc_gen.220 }	
+	}
+	option = {# select british plane
+		name = DOD_hungary.151.d
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = ENG
+				factor = 10
+			}
+			modifier = {
+				ENG = { has_government = ROOT }
+				factor = 2
+			}
+			modifier = {
+				ENG = {
+					has_tech = CAS1
+				}
+				add = 10
+			}
+			modifier = {
+				ENG = {
+					has_tech = CAS2
+				}
+				add = 10
+			}
+			modifier = {
+				ENG = {
+					has_tech = CAS3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					ENG = { has_tech = CAS1}
+					ROOT = { NOT = { has_tech = CAS1 } }
+				}
+				AND = {
+					ENG = { has_tech = CAS2}
+					ROOT = { NOT = { has_tech = CAS2 } }
+				}
+				AND = {
+					ENG = { has_tech = CAS3}
+					ROOT = { NOT = { has_tech = CAS3 } }
+				}
+			}
+			NOT = { has_war_with = ENG }
+			NOT = { has_country_flag = ENG_CAS_refused }
+		}
+		ENG = { country_event = umc_gen.220 }	
+	}
+	option = {# select american plane
+		name = DOD_hungary.151.e
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = USA
+				factor = 10
+			}
+			modifier = {
+				USA = { has_government = ROOT }
+				factor = 2
+			}
+			modifier = {
+				USA = {
+					has_tech = CAS1
+				}
+				add = 10
+			}
+			modifier = {
+				USA = {
+					has_tech = CAS2
+				}
+				add = 10
+			}
+			modifier = {
+				USA = {
+					has_tech = CAS3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					USA = { has_tech = CAS1}
+					ROOT = { NOT = { has_tech = CAS1 } }
+				}
+				AND = {
+					USA = { has_tech = CAS2}
+					ROOT = { NOT = { has_tech = CAS2 } }
+				}
+				AND = {
+					USA = { has_tech = CAS3}
+					ROOT = { NOT = { has_tech = CAS3 } }
+				}
+			}
+			NOT = { has_war_with = USA }
+			NOT = { has_country_flag = USA_CAS_refused }
+			NOT = { #to prevent overflow issues
+				AND = {
+					GER = {
+						is_available_cas_ROOT = yes
+					}
+					FRA = {
+						is_available_cas_ROOT = yes
+					}
+					ITA = {
+						is_available_cas_ROOT = yes
+					}
+					ENG = {
+						is_available_cas_ROOT = yes
+					}
+				}
+			}
+		}
+		USA = { country_event = umc_gen.220 }	
+	}
+	option = {# failsafe
+		name = DOD_hungary.151.f	
+		trigger = {
+			OR = {
+				has_country_flag = GER_CAS_refused
+				has_country_flag = ITA_CAS_refused
+				has_country_flag = ENG_CAS_refused
+				has_country_flag = FRA_CAS_refused
+				has_country_flag = USA_CAS_refused
+			}
+		}
+		air_experience = 50
+	}
+
+}
+
+country_event = {
+	id = umc_gen.220
+	title = DOD_hungary.163.t
+	desc = DOD_hungary.163.desc 
+	picture = GFX_report_event_generic_bombers
+	
+	is_triggered_only = yes
+
+	option = {# certainly
+		name = DOD_hungary.153.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				has_war = yes
+				factor = 0.5
+			}
+		}
+		air_experience = 20
+		FROM = { country_event = DOD_hungary.165 }
+		if = {
+			limit = {
+				has_tech = CAS1
+				NOT = { has_tech = CAS2 }
+			}
+			create_production_license = {
+				target = FROM 
+				equipment = {
+					type = CAS_equipment_1
+				}
+				cost_factor = 0
+			}
+		}
+		if = {
+			limit = {
+				has_tech = CAS2
+				NOT = { has_tech = CAS3 }
+			}
+			create_production_license = {
+				target = FROM 
+				equipment = {
+					type = CAS_equipment_2	
+				}
+				cost_factor = 0
+			}
+		}
+		if = {
+			limit = {
+				has_tech = CAS3
+			}
+			create_production_license = {
+				target = FROM 
+				equipment = {
+					type = CAS_equipment_3
+				}
+				cost_factor = 0
+			}
+		}
+	}
+
+	option = {# no
+		name = DOD_hungary.153.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				is_in_faction_with = FROM
+				factor = 0
+			}
+		}
+		if = {
+			limit = { tag = GER }
+			FROM = { set_country_flag = GER_CAS_refused }
+		}
+		if = {
+			limit = { tag = ITA }
+			FROM = { set_country_flag = ITA_CAS_refused }
+		}
+		if = {
+			limit = { tag = FRA }
+			FROM = { set_country_flag = FRA_CAS_refused }
+		}
+		if = {
+			limit = { tag = ENG }
+			FROM = { set_country_flag = ENG_CAS_refused }
+		}
+		if = {
+			limit = { tag = USA }
+			FROM = { set_country_flag = USA_CAS_refused }
+		}
+		FROM = { country_event = umc_gen.210 }
+		reverse_add_opinion_modifier = { target = FROM modifier = refused_help }
+	}
+}
+
+
+
+
+country_event = {
+	id = umc_gen.250
+	title = DOD_hungary.162.t
+	desc = {
+		text = DOD_hungary.162.desc_tac
+		trigger = {
+			NOT = { 
+				has_country_flag = GER_tactical_bomber_refused
+				has_country_flag = ENG_tactical_bomber_refused
+				has_country_flag = USA_tactical_bomber_refused
+				has_country_flag = FRA_tactical_bomber_refused
+				has_country_flag = ITA_tactical_bomber_refused
+			} 
+		}
+	}
+	desc = {
+		text = DOD_hungary.162.desc_tac_refused
+		trigger = {
+			OR = {
+		 		has_country_flag = GER_tactical_bomber_refused
+				has_country_flag = ENG_tactical_bomber_refused
+				has_country_flag = USA_tactical_bomber_refused
+				has_country_flag = FRA_tactical_bomber_refused
+				has_country_flag = ITA_tactical_bomber_refused
+		 	}
+		}
+	}
+	picture = GFX_report_event_generic_bombers
+	
+	is_triggered_only = yes
+
+	option = {# Select German Plane
+		name = DOD_hungary.151.a
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = GER
+				factor = 10
+			}
+			modifier = {
+				GER = { has_government = ROOT }
+				factor = 2
+			}
+			modifier = {
+				GER = {
+					has_tech = tactical_bomber1
+				}
+				add = 10
+			}
+			modifier = {
+				GER = {
+					has_tech = tactical_bomber2
+				}
+				add = 10
+			}
+			modifier = {
+				GER = {
+					has_tech = tactical_bomber3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					GER = { has_tech = tactical_bomber1}
+					ROOT = { NOT = { has_tech = tactical_bomber1 } }
+				}
+				AND = {
+					GER = { has_tech = tactical_bomber2}
+					ROOT = { NOT = { has_tech = tactical_bomber2 } }
+				}
+				AND = {
+					GER = { has_tech = tactical_bomber3}
+					ROOT = { NOT = { has_tech = tactical_bomber3 } }
+				}
+			}
+			NOT = { has_war_with = GER }
+			NOT = { has_country_flag = GER_tactical_bomber_refused }
+		}
+		GER = { country_event = umc_gen.260 }	
+	}
+
+	option = {# select italian plane
+		name = DOD_hungary.151.b
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = ITA
+				factor = 10
+			}
+			modifier = {
+				ITA = { has_government = ROOT }
+				factor = 2
+			}
+			modifier = {
+				ITA = {
+					has_tech = tactical_bomber1
+				}
+				add = 10
+			}
+			modifier = {
+				ITA = {
+					has_tech = tactical_bomber2
+				}
+				add = 10
+			}
+			modifier = {
+				ITA = {
+					has_tech = tactical_bomber3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					ITA = { has_tech = tactical_bomber1}
+					ROOT = { NOT = { has_tech = tactical_bomber1 } }
+				}
+				AND = {
+					ITA = { has_tech = tactical_bomber2}
+					ROOT = { NOT = { has_tech = tactical_bomber2 } }
+				}
+				AND = {
+					ITA = { has_tech = tactical_bomber3}
+					ROOT = { NOT = { has_tech = tactical_bomber3 } }
+				}
+			}
+			NOT = { has_war_with = ITA }
+			NOT = { has_country_flag = ITA_tactical_bomber_refused }
+		}
+		ITA = { country_event = umc_gen.260 }	
+	}
+
+	option = {# select french plane
+		name = DOD_hungary.151.c
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = FRA
+				factor = 10
+			}
+			modifier = {
+				FRA = { has_government = ROOT }
+				factor = 2
+			}
+			modifier = {
+				FRA = {
+					has_tech = tactical_bomber1
+				}
+				add = 10
+			}
+			modifier = {
+				FRA = {
+					has_tech = tactical_bomber2
+				}
+				add = 10
+			}
+			modifier = {
+				FRA = {
+					has_tech = tactical_bomber3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					FRA = { has_tech = tactical_bomber1}
+					ROOT = { NOT = { has_tech = tactical_bomber1 } }
+				}
+				AND = {
+					FRA = { has_tech = tactical_bomber2}
+					ROOT = { NOT = { has_tech = tactical_bomber2 } }
+				}
+				AND = {
+					FRA = { has_tech = tactical_bomber3}
+					ROOT = { NOT = { has_tech = tactical_bomber3 } }
+				}
+			}
+			NOT = { has_war_with = FRA }
+			NOT = { has_country_flag = FRA_tactical_bomber_refused }
+		}
+		FRA = { country_event = umc_gen.260 }	
+	}
+	option = {# select british plane
+		name = DOD_hungary.151.d
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = ENG
+				factor = 10
+			}
+			modifier = {
+				ENG = { has_government = ROOT }
+				factor = 2
+			}
+			modifier = {
+				ENG = {
+					has_tech = tactical_bomber1
+				}
+				add = 10
+			}
+			modifier = {
+				ENG = {
+					has_tech = tactical_bomber2
+				}
+				add = 10
+			}
+			modifier = {
+				ENG = {
+					has_tech = tactical_bomber3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					ENG = { has_tech = tactical_bomber1}
+					ROOT = { NOT = { has_tech = tactical_bomber1 } }
+				}
+				AND = {
+					ENG = { has_tech = tactical_bomber2}
+					ROOT = { NOT = { has_tech = tactical_bomber2 } }
+				}
+				AND = {
+					ENG = { has_tech = tactical_bomber3}
+					ROOT = { NOT = { has_tech = tactical_bomber3 } }
+				}
+			}
+			NOT = { has_war_with = ENG }
+			NOT = { has_country_flag = ENG_tactical_bomber_refused }
+		}
+		ENG = { country_event = umc_gen.260 }	
+	}
+	option = {# select american plane
+		name = DOD_hungary.151.e
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction_with = USA
+				factor = 10
+			}
+			modifier = {
+				USA = { has_government = ROOT }
+				factor = 2
+			}
+			modifier = {
+				USA = {
+					has_tech = tactical_bomber1
+				}
+				add = 10
+			}
+			modifier = {
+				USA = {
+					has_tech = tactical_bomber2
+				}
+				add = 10
+			}
+			modifier = {
+				USA = {
+					has_tech = tactical_bomber3
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					USA = { has_tech = tactical_bomber1}
+					ROOT = { NOT = { has_tech = tactical_bomber1 } }
+				}
+				AND = {
+					USA = { has_tech = tactical_bomber2}
+					ROOT = { NOT = { has_tech = tactical_bomber2 } }
+				}
+				AND = {
+					USA = { has_tech = tactical_bomber3}
+					ROOT = { NOT = { has_tech = tactical_bomber3 } }
+				}
+			}
+			NOT = { has_war_with = USA }
+			NOT = { has_country_flag = USA_tactical_bomber_refused }
+			NOT = { #to prevent overflow issues
+				AND = {
+					GER = {
+						is_available_tac_ROOT = yes
+					}
+					FRA = {
+						is_available_tac_ROOT = yes
+					}
+					ITA = {
+						is_available_tac_ROOT = yes
+					}
+					ENG = {
+						is_available_tac_ROOT = yes
+					}
+				}
+			}
+		}
+		USA = { country_event = umc_gen.260 }	
+	}
+	option = {# failsafe
+		name = DOD_hungary.151.f	
+		trigger = {
+			OR = {
+				has_country_flag = GER_tactical_bomber_refused
+				has_country_flag = ITA_tactical_bomber_refused
+				has_country_flag = ENG_tactical_bomber_refused
+				has_country_flag = FRA_tactical_bomber_refused
+				has_country_flag = USA_tactical_bomber_refused
+			}
+		}
+		air_experience = 50
+	}
+
+}
+
+country_event = {
+	id = umc_gen.260
+	title = DOD_hungary.164.t
+	desc = DOD_hungary.164.desc 
+	picture = GFX_report_event_generic_bombers
+	
+	is_triggered_only = yes
+
+	option = {# certainly
+		name = DOD_hungary.153.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				has_war = yes
+				factor = 0.5
+			}
+		}
+		FROM = { country_event = DOD_hungary.165 }
+		air_experience = 20
+		if = {
+			limit = {
+				has_tech = tactical_bomber1
+				NOT = { has_tech = tactical_bomber2 }
+			}
+			create_production_license = {
+				target = FROM 
+				equipment = {
+					type = tac_bomber_equipment_1
+				}
+				cost_factor = 0
+			}
+		}
+		if = {
+			limit = {
+				has_tech = tactical_bomber2
+				NOT = { has_tech = tactical_bomber3 }
+			}
+			create_production_license = {
+				target = FROM 
+				equipment = {
+					type = tac_bomber_equipment_2	
+				}
+				cost_factor = 0
+			}
+		}
+		if = {
+			limit = {
+				has_tech = tactical_bomber3
+			}
+			create_production_license = {
+				target = FROM 
+				equipment = {
+					type = tac_bomber_equipment_3
+				}
+				cost_factor = 0
+			}
+		}
+	}
+
+	option = {# no
+		name = DOD_hungary.153.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				is_in_faction_with = FROM
+				factor = 0
+			}
+		}
+		if = {
+			limit = { tag = GER }
+			FROM = { set_country_flag = GER_tactical_bomber_refused }
+		}
+		if = {
+			limit = { tag = ITA }
+			FROM = { set_country_flag = ITA_tactical_bomber_refused }
+		}
+		if = {
+			limit = { tag = FRA }
+			FROM = { set_country_flag = FRA_tactical_bomber_refused }
+		}
+		if = {
+			limit = { tag = ENG }
+			FROM = { set_country_flag = ENG_tactical_bomber_refused }
+		}
+		if = {
+			limit = { tag = USA }
+			FROM = { set_country_flag = USA_tactical_bomber_refused }
+		}
+		FROM = { country_event = umc_gen.250 }
+		reverse_add_opinion_modifier = { target = FROM modifier = refused_help }
+	}
+}

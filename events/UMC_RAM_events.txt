@@ -1,0 +1,104 @@
+###########################
+# R. Mittelafrika Events
+###########################
+
+add_namespace = rma
+
+################################### Financial Help ####################################
+
+country_event = {	### Financial help decision for Germany
+	id = rma.1				
+	title = rma.1.t			
+	desc = rma.1.d				
+	picture = GFX_report_event_german_speech
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { ### Financial and Industry Help 
+		name = rma.1.a
+		ai_chance = { base = 65 }
+		
+		RMA = {
+			country_event = { hours = 6 id = rma.2 }
+		}
+	}
+	
+	option = { ### Financial Help 
+		name = rma.1.b
+		ai_chance = { base = 35 }
+		
+		RMA = {
+			country_event = { hours = 6 id = rma.3 }
+		}
+	}
+	
+	option = { ### Nothing, LOL
+		name = rma.1.c
+		ai_chance = { base = 0 }
+		
+		RMA = {
+			country_event = { hours = 6 id = rma.4 }
+		}
+	}
+}
+
+
+country_event = {	### Add Idea & Off map factories
+	id = rma.2			
+	title = rma.2.t			
+	desc = rma.2.d				
+	picture = GFX_report_event_german_speech
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { ### Financial and Industry help 
+		name = rma.2.a
+		ai_chance = { base = 100 }
+		
+		RMA = {
+			add_ideas = RA_Financial_Help_I
+		}
+		
+	}
+}
+
+
+
+country_event = {	### Add Idea
+	id = rma.3
+	title = rma.3.t			
+	desc = rma.3.d				
+	picture = GFX_report_event_german_speech
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { ### Financial help 
+		name = rma.3.a
+		ai_chance = { base = 100 }
+		
+		RMA = {
+			add_ideas = RA_Financial_Help_I
+		}
+	}
+}
+
+
+
+country_event = {	### Nothing
+	id = rma.4
+	title = rma.4.t			
+	desc = rma.4.d				
+	picture = GFX_report_event_german_speech
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { ### Nothing
+		name = rma.4.a
+		ai_chance = { base = 100 }
+		
+	}
+}

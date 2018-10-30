@@ -1,0 +1,27 @@
+state=
+{
+	id=333
+	name="STATE_333"
+	manpower = 309800
+	resources={
+		rubber=9 
+		oil=2 
+	}
+	
+	state_category = rural
+
+	history=
+	{
+		owner = ENG
+		victory_points = {
+			7371 1
+		}
+		buildings = {
+			infrastructure = 3
+		}
+	}
+
+	provinces={
+		 1306 1335 4282 4338 7358 10143 10199 10212 10240 12171 12186 12228 7371
+	}
+}

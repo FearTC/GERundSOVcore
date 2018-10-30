@@ -1,0 +1,206 @@
+﻿###########################
+# Japanese pressures Events
+###########################
+add_namespace = pressure
+
+# Pressures England
+country_event = {
+	id = pressure.1
+	title = pressure.1.t
+	desc = pressure.1.d
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = { # Accept demands
+		name = pressure.1.a
+		ai_chance = {
+			factor = 25 
+			modifier = {
+				factor = 50
+				has_war = yes
+				any_enemy_country = {
+					strength_ratio = { 
+						tag = ROOT 
+						ratio < 0.4
+					}
+				}
+			}
+			modifier = {
+				factor = 75
+				126 = { NOT = { is_controlled_by = ENG } } #London	
+			}
+		} 
+		JAP = {
+			country_event = { days = 5 id = pressure.2 }
+		}
+	}
+	option = { # Refuse
+		name = pressure.1.b
+		ai_chance = { factor = 25 }
+		JAP = {
+			country_event = { days = 5 id = pressure.3 }
+		}
+	}
+}
+# England Accept Demands
+country_event = {
+	id = pressure.2
+	title = pressure.2.t
+	desc = pressure.2.d
+	picture = GFX_report_event_japanese_soldiers_02
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = pressure.2.a
+		JAP = {
+			if = {
+				MAL = { is_puppet_of = ENG }
+				puppet = MAL
+			}
+			if = {
+				limit = {
+					270 = { OR = { is_controlled_by = ENG is_controlled_by = JAP } }
+					636 = { OR = { is_controlled_by = ENG is_controlled_by = JAP } }
+					643 = { OR = { is_controlled_by = ENG is_controlled_by = JAP } }
+					639 = { OR = { is_controlled_by = ENG is_controlled_by = JAP } }
+					725 = { OR = { is_controlled_by = ENG is_controlled_by = JAP } }
+					326 = { OR = { is_controlled_by = ENG is_controlled_by = JAP } }
+				}
+				transfer_state = 270
+				transfer_state = 636
+				transfer_state = 643
+				transfer_state = 639
+				transfer_state = 725
+				transfer_state = 326
+			}
+		}
+		SIA = {
+			if = {
+				limit = {
+					336 = {
+						OR = {
+							is_controlled_by = ENG
+							is_controlled_by = MAL
+							is_controlled_by = JAP
+						}
+					}
+				}
+				transfer_state = 336
+				add_state_core = 336
+				MAL = { remove_state_core = 336 remove_state_claim = 336 }
+			}
+		}
+	}
+}
+# Pressures Netherlands
+country_event = {
+	id = pressure.4
+	title = pressure.4.t
+	desc = pressure.4.d
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = { # Accept demands
+		name = pressure.4.a
+		ai_chance = {
+			factor = 25 
+			modifier = {
+				factor = 50
+				has_war = yes
+				any_enemy_country = {
+					strength_ratio = { 
+						tag = ROOT 
+						ratio < 0.4
+					}
+				}
+			}
+			modifier = {
+				factor = 75
+				HOL = { has_capitulated = yes }	
+			}
+		} 
+		JAP = {
+			country_event = { days = 5 id = pressure.5 }
+		}
+	}
+	option = { # Refuse
+		name = pressure.4.b
+		ai_chance = { factor = 25 }
+		JAP = {
+			country_event = { days = 5 id = pressure.3 }
+		}
+	}
+}
+# Netherlands Accept Demands
+country_event = {
+	id = pressure.5
+	title = pressure.5.t
+	desc = pressure.5.d
+	picture = GFX_report_event_japanese_soldiers_02
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = pressure.5.a
+		JAP = {
+			if = {
+				INS = { is_puppet_of = HOL }
+				puppet = INS
+			}
+		}
+		MAL = {
+			if = {
+				limit = {
+					334 = {
+						OR = {
+							is_controlled_by = HOL
+							is_controlled_by = INS
+							is_controlled_by = JAP
+						}
+					}
+				}
+				transfer_state = 334
+				add_state_core = 334
+				INS = { remove_state_core = 334 remove_state_claim = 334 }
+			}
+		}
+		INS = {
+			if = {
+				limit = {
+					AST = { is_puppet_of = ENG }
+					523 = {
+						OR = {
+							is_controlled_by = ENG
+							is_controlled_by = AST
+							is_controlled_by = JAP
+						}
+					}
+				}
+				transfer_state = 523
+				add_state_core = 523
+				AST = { remove_state_core = 523 remove_state_claim = 523 }
+				transfer_state = 721
+				add_state_core = 721
+				transfer_state = 729
+				add_state_core = 729
+				POR = { remove_state_core = 721 remove_state_claim = 721 }
+				POR = { remove_state_core = 729 remove_state_claim = 729 }
+			}
+		}
+	}
+}
+# Reject Demands
+country_event = {
+	id = pressure.3
+	title = pressure.3.t
+	desc = pressure.3.d
+	picture = GFX_report_event_japanese_soldiers_03
+	
+	is_triggered_only = yes
+	option = {
+		name = pressure.3.a
+	}
+}

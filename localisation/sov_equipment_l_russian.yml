@@ -1,0 +1,19 @@
+﻿l_russian:
+ 
+ weapons_4_kalishnikov:0 "Автомат Калашникова"
+ kalashnikov_rifle_tech:0 "AK-47"
+ 
+ infantry_equipment_30:0 "Современное пехотное снаряжение"
+ 
+ 
+ #SOV_CAS2:0 "IL-2 Sturmovik"
+ 
+ #SOV_heavy_tank_equipment_2:0 "KV-1"
+ #SOV_medium_tank_equipment_2:0 "T-34"
+ 
+ SOV_infantry_weapons1:0 "СВТ-38"
+ 
+ SOV_improved_heavy_tank:0 "КВ-1"
+ SOV_improved_medium_tank:0 "Т-34"
+ 
+ SOV_CAS2:0 "ИЛ-2"

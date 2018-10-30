@@ -1,0 +1,1628 @@
+﻿###########################
+# German Events
+###########################
+
+add_namespace = germany
+
+#sov-ger unholy alliance 
+country_event = {
+	id = germany.1189
+	title = germany.1189.t
+	desc = germany.1189.d
+	picture = GFX_report_event_molotov_ribbentrop_stalin_pact
+
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.1189.a
+		dismantle_faction = yes
+		add_stability = -0.1
+		war_support_weekly = 0.05
+		every_other_country = {
+			limit = {
+				OR = {
+					AND = {
+						NOT = { tag = GER }
+						has_government = fascism 
+					}
+					has_government = democratic 
+				}
+			}
+			add_opinion_modifier = { target = SOV modifier = unholy_alliance }
+		}
+		every_other_country = {
+				limit = { NOT = {	tag = GER 
+									is_puppet_of = GER	} }
+				declare_war_on = {
+					target = SOV
+					type = annex
+				}				
+			}
+		GER = {
+			if = {
+					limit = {
+						is_faction_leader = yes
+					}
+					dismantle_faction = yes
+			}
+			if = {
+					limit = {
+						is_in_faction  = yes
+					}
+					remove_from_faction = GER
+			}
+			add_stability = -0.2
+			war_support_weekly = 0.05
+			create_faction = "the_berlin_moscow_axis"
+			add_to_faction = SOV
+			add_named_threat = { threat = 10 name = germany.89.t }
+			every_other_country = {
+				limit = {
+					has_government = fascism 
+				}
+				add_opinion_modifier = { target = GER modifier = communist_collaborators }
+			}
+			every_other_country = {
+				limit = {
+					has_government = democratic 
+				}
+				add_opinion_modifier = { target = GER modifier = unholy_alliance }
+			}
+			every_other_country = {
+				limit = { NOT = {	tag = SOV
+									is_puppet_of = SOV } }
+				declare_war_on = {
+					target = GER
+					type = annex
+				}				
+			}
+			
+		}
+		hidden_effect = { 
+			every_other_country = {
+				limit = {
+					NOT = { tag = SOV }
+					NOT = { tag = GER }
+				}
+				country_event = { id = germany.666 }
+			}
+			sound_effect = sp_ger_unholyalliance
+			# Britain can rally democracies
+			ENG = {
+				country_event = { days = 3 id = britain.11 }
+			}
+			# US drops communism/fascism
+			USA = {
+				country_event = { id = usa.14 }
+				country_event = { id = usa.24 }
+			}
+		}
+	}
+	
+	option = {
+		name = germany.1189.b
+		ai_chance = { factor = 0 }
+		GER = {
+			country_event = germany.90
+			effect_tooltip = {
+				remove_ideas = soviet_german_friendship
+				create_wargoal = {
+					type = take_state_focus
+					target = SOV
+					generator = { 219 217 } # Moscow and Stalingrad
+				}
+			}
+		}
+		remove_opinion_modifier = { target = GER modifier = ger_sov_alliance_focus }
+		remove_ideas = soviet_german_friendship
+	}
+}
+
+country_event = {
+	id = germany.90
+	title = germany.90.t
+	desc = germany.90.d
+	picture = GFX_report_event_stalin_02
+
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.90.a
+		remove_ideas = soviet_german_friendship
+		create_wargoal = {
+			type = take_state_focus
+			target = SOV
+			generator = { 219 217 } # Moscow and Stalingrad
+		}
+	}
+}
+
+country_event = {
+	id = germany.666
+	title = germany.666.t
+	desc = germany.666.d
+	picture = GFX_report_event_molotov_ribbentrop_stalin_pact
+}
+
+# TEST
+country_event = {
+	id = germany.104245
+	title = germany.104245.t
+	desc = germany.104245.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.104245.a
+		
+	
+		
+		
+	}
+}
+
+
+
+
+
+# German-Soviet Treaty (Soviets)
+country_event = {
+	id = germany.75
+	title = germany.75.t
+	desc = germany.75.d
+	picture = GFX_report_event_physics_lab_01
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.75.a	#sounds good
+		GER = {
+			country_event = { days = 1 id = germany.76 }
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = sov_ger_treaty
+			}
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = sov_ger_treaty_trade
+			}
+		}
+		# REVISIT Balance research bonus
+		add_tech_bonus = {
+			name = med_armor_bonus
+			ahead_reduction = 1
+			category = cat_medium_armor
+		}
+		add_tech_bonus = {
+			name = armor_bonus
+			bonus = 0.5
+			uses = 2
+			category = armor
+		}
+	}
+	
+	option = {
+		name = germany.75.b	#no way 
+		add_timed_idea = { idea = SOV_scientist_defect days = 365 }
+		ai_chance = { factor = 0 }
+		add_political_power = -10
+		add_opinion_modifier = { target = GER modifier = refused_MR_pact }# no pact 
+		GER = {
+			country_event = { days = 1 id = germany.77 }
+		}
+	}
+}
+
+# Closer bonds with Argentine
+country_event = {
+	id = germany.231
+	title = germany.231.t
+	desc = germany.231.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = { ### Yes - Become the Colony
+		name = germany.231.a
+		ai_chance = { base = 100 }
+		
+		ARG = { add_state_claim = 688 }
+		ARG = { add_state_claim = 301 }
+		ARG = { add_state_claim = 300 }
+		
+		add_political_power = -50
+		
+		GER = {
+			country_event = { hours = 6 id = germany.232 }
+		}
+	}
+	
+	option = { ### No - Freeeeeedom LOL
+		name = germany.231.b
+		ai_chance = { base = 0 }
+		
+		add_political_power = 75
+		
+		GER = {
+			country_event = { hours = 6 id = germany.233 }
+		}
+	}
+}
+
+country_event = {
+	id = germany.232
+	title = germany.232.t
+	desc = germany.232.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = { ### Cool
+		name = germany.232.a
+		ai_chance = { base = 100 }
+		
+		set_autonomy = { target = ARG autonomy_state = autonomy_satellite }
+		
+		add_political_power = 75
+		
+		news_event = { hours = 6 id = news.36 }
+	}
+	
+}
+
+country_event = {
+	id = germany.233
+	title = germany.233.t
+	desc = germany.233.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = { ### What the fuck?! WAR!
+		name = germany.233.a
+		ai_chance = { base = 10 }
+
+		if = { NOT = {{ USA = { has_completed_focus = USA_prepare_intervention }}}
+		USA = { diplomatic_relation = { country = ARG relation = guarantee active = no } }
+		}
+		
+		declare_war_on = { target = ARG type = puppet }
+		
+		add_political_power = 50
+		
+		news_event = { hours = 6 id = news.36 }
+	}
+	
+	option = { ### Well, take back the investment
+		name = germany.233.b
+		ai_chance = { base = 40 }
+
+		278 = { remove_building = { type = industrial_complex level = 2 } }
+		278 = { remove_building = { type = dockyard level = 1 } }
+		510 = { remove_building = { type = industrial_complex level = 1 } }
+		509 = { remove_building = { type = arms_factory level = 1 } }
+		
+		news_event = { hours = 6 id = news.36 }
+	}
+	
+	option = { ### Whatever LOL
+		name = germany.233.c
+		ai_chance = { base = 50 }
+
+		add_political_power = -150
+		
+		news_event = { hours = 6 id = news.36 }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+country_event = {
+	id = germany.250	### Japanese answer on Air Purchase
+	title = germany.250.t
+	desc = germany.250.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = { ### Figher and Bombers and research for investment
+		name = germany.250.a
+		ai_chance = { base = 40 }
+		
+		trigger = {
+			has_equipment = { cv_fighter_equipment_0 > 20 }
+			has_equipment = { cv_naval_bomber1 > 20 }
+		}
+		
+		send_equipment = {
+			target = GER
+			type = cv_fighter_equipment_0
+			amount = 20
+		}	
+
+		send_equipment = {
+			target = GER
+			type = cv_naval_bomber1
+			amount = 20
+		}			
+		
+		add_offsite_building = { type = industrial_complex level = 4 }
+		
+			282 = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}					
+			
+			create_production_license = { target = GER	cost_factor = 1.0 equipment = {	type = cv_fighter_equipment_0 version = 0 } }
+			create_production_license = { target = GER	cost_factor = 1.0 equipment = {	type = cv_naval_bomber1 version = 0 } }
+			
+			
+		add_stability = -0.05
+			
+		add_political_power = -75
+		
+		GER = {
+			country_event = { hours = 6 id = germany.251 }
+		}
+	}
+	
+	option = { ### Research for investment
+		name = germany.250.b
+		ai_chance = { base = 60 }
+		
+		add_offsite_building = { type = industrial_complex level = 2 }
+		
+			282 = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}					
+			
+			create_production_license = { target = GER	cost_factor = 1.0 equipment = {	type = cv_fighter_equipment_0 version = 0 } }
+			create_production_license = { target = GER	cost_factor = 1.0 equipment = {	type = cv_naval_bomber1 version = 0 } }
+			
+			
+			add_political_power = 75
+			
+		GER = {
+			country_event = { hours = 6 id = germany.252 }
+		}
+	}
+	
+	option = { ### No
+		name = germany.250.c
+		ai_chance = { base = 0 }
+
+		add_political_power = -25
+		
+		GER = {
+			country_event = { hours = 6 id = germany.253 }
+		}
+	}
+}
+
+country_event = {
+	id = germany.251	### Figher and Bombers arives!
+	title = germany.251.t
+	desc = germany.251.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = { ### 
+		name = germany.251.a
+		ai_chance = { base = 100 }
+		
+			add_tech_bonus = {
+				name = nav_bomber_bonus
+				bonus = 0.50
+				uses = 2
+				category = naval_air
+			}
+			
+			add_war_support = 0.01
+			
+			effect_tooltip = {
+				
+				custom_effect_tooltip = GER_Navy_Luft_Ev_1
+				
+			}
+	}
+}
+	
+country_event = {
+	id = germany.252	### Technology bonusess arives!
+	title = germany.252.t
+	desc = germany.252.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = { ###
+		name = germany.252.a
+		ai_chance = { base = 100 }
+		
+			add_tech_bonus = {
+				name = nav_bomber_bonus
+				bonus = 0.50
+				uses = 2
+				category = naval_air
+			}
+			
+			add_war_support = 0.01
+			
+			effect_tooltip = {
+				custom_effect_tooltip = GER_Navy_Luft_Ev_2
+			}
+	}
+}
+
+country_event = {
+	id = germany.253	### Well... nothing arives.
+	title = germany.253.t
+	desc = germany.253.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = { ###
+		name = germany.253.a
+		ai_chance = { base = 100 }
+	
+	}
+}
+
+
+
+
+
+country_event = {
+	id = germany.260	### Graff Zepelin on the WAAAATTTTHEEEEER!
+	title = germany.260.t
+	desc = germany.260.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = { ###
+		name = germany.260.a
+		ai_chance = { base = 100 }
+		
+				add_equipment_production = {
+					equipment = { type = carrier_3 }
+					requested_factories = 5
+					progress = 0.18
+					amount = 1
+				}
+	}
+}
+
+
+
+
+
+country_event = {
+	id = germany.270	### The Wunderwaffe Decision aka. cheat NUKE ### BTW YOU HERE TO LOOK BCS YOU THINK NOTHING WILL HAPPEN IF YU SELECT THE OTHER TWO OPTIONS??? 
+	title = germany.270.t
+	desc = germany.270.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = { ### Support Werner Karl Heisenberg (Not that one that makes metanphetamine) - Nuclear bonus
+		name = germany.270.a
+		ai_chance = { base = 10 }
+		
+		hidden_effect = {
+			GER = {
+				country_event = { days = 900 id = germany.271 }
+			}
+		}
+	}
+	
+	option = { ### Support Wernher von Braun - Rocketry bonus
+		name = germany.270.b
+		ai_chance = { base = 60 }
+		
+		hidden_effect = {
+			GER = {
+				country_event = { days = 700 id = germany.272 }
+			}
+		}
+	}
+	
+	option = { ### Focus on all Tech
+		name = germany.270.c
+		ai_chance = { base = 30 }
+		
+		add_ideas = GER_Research_I1
+	}
+}
+
+country_event = {
+	id = germany.271	### Nuclear Bonus
+	title = germany.271.t
+	desc = germany.271.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = { ###
+		name = germany.271.a
+		ai_chance = { base = 100 }
+		
+			add_tech_bonus = {
+				name = secret_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = nuclear
+			}
+	}
+}
+
+country_event = {
+	id = germany.272	### Rocket Bonus
+	title = germany.272.t
+	desc = germany.272.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = { ###
+		name = germany.272.a
+		ai_chance = { base = 100 }
+		
+			add_tech_bonus = {
+				name = GER_rocketry_focus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 2
+				category = rocketry
+			}
+	}
+}
+
+
+
+
+
+country_event = {
+	id = germany.280	### Blaue Division
+	title = germany.280.t
+	desc = germany.280.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = { ###
+		name = germany.280.a
+		ai_chance = { base = 90 }
+		
+		GER = {
+			country_event = { days = 1 id = germany.281 }
+		}
+	}
+	
+	option = { ###
+		name = germany.280.b
+		ai_chance = { base = 10 }
+		
+		GER = {
+			country_event = { days = 1 id = germany.282 }
+		}
+	}
+}
+
+country_event = {
+	id = germany.281	### Franco form Blaue Division
+	title = germany.281.t
+	desc = germany.281.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = { ###
+		name = germany.281.a
+		ai_chance = { base = 100 }
+		
+	create_corps_commander = {
+		name = "Agustín Muñoz Grandes"
+###		gfx = "GFX_RAJ_lakshmi_sahgal"
+		traits = { infantry_officer infantry_expert trait_mountaineer }
+		skill = 3
+		attack_skill = 4
+		defense_skill = 2
+		planning_skill = 1
+		logistics_skill = 2
+	}
+		
+		division_template = {
+			name = "Blaue Division"
+		
+		regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 0 y = 2 }
+			infantry = { x = 0 y = 3 }
+			infantry = { x = 0 y = 4 }
+			
+			infantry = { x = 1 y = 0 }
+			infantry = { x = 1 y = 1 }
+			infantry = { x = 1 y = 2 }
+			infantry = { x = 1 y = 3 }
+			infantry = { x = 1 y = 4 }
+			}
+		}
+		
+		random_owned_controlled_state = {
+			prioritize = { 55 }
+			create_unit = { 
+				division = "name = \"1. Blaue-Division\" division_template = \"Blaue Division\" start_experience_factor = 0.3" 
+				owner = GER
+				}
+		}
+		
+		random_owned_controlled_state = {
+			prioritize = { 55 }
+			create_unit = { 
+				division = "name = \"2. Blaue-Division\" division_template = \"Blaue Division\" start_experience_factor = 0.3" 
+				owner = GER
+				}
+		}
+		
+		random_owned_controlled_state = {
+			prioritize = { 55 }
+			create_unit = { 
+				division = "name = \"3. Blaue-Division\" division_template = \"Blaue Division\" start_experience_factor = 0.3" 
+				owner = GER
+				}
+		}
+		
+		random_owned_controlled_state = {
+			prioritize = { 55 }
+			create_unit = { 
+				division = "name = \"4. Blaue-Division\" division_template = \"Blaue Division\" start_experience_factor = 0.3" 
+				owner = GER
+				}
+		}
+	}
+}
+
+
+country_event = {
+	id = germany.282	### Franco declines (haha he know his fate)
+	title = germany.282.t
+	desc = germany.282.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = { ###
+		name = germany.282.a
+		ai_chance = { base = 100 }
+		
+
+	}
+}
+
+
+
+
+
+country_event = {
+	id = germany.290	### Send Equipment for Francoboi
+	title = germany.290.t
+	desc = germany.290.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = { ### Send Guns, Support eq. and Artilery
+		name = germany.290.a
+		ai_chance = { base = 40 }
+		
+		trigger = {
+			has_equipment = { infantry_equipment > 3000 }
+			has_equipment = { artillery_equipment > 100 }
+		}
+		
+		send_equipment = {
+			target = D01
+			type = infantry_equipment
+			amount = 3000
+		}	
+		
+		send_equipment = {
+			target = D01
+			type = support_equipment
+			amount = 100
+		}
+		
+		send_equipment = {
+			target = D01
+			type = artillery_equipment
+			amount = 100
+		}	
+		
+		D01 = {
+			country_event = { days = 1 id = germany.291 }
+		}
+		
+	}
+	
+	option = { ### Send Guns
+		name = germany.290.a
+		ai_chance = { base = 60 }
+		
+		send_equipment = {
+			target = D01
+			type = infantry_equipment
+			amount = 3000
+		}
+		
+		D01 = {
+			country_event = { days = 1 id = germany.292 }
+		}
+	}
+
+}
+
+
+
+
+
+country_event = {	#### Spanish Aliance
+	id = germany.300
+	title = germany.300.t
+	desc = germany.300.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = {	#### sure mate
+		name = germany.300.a
+		
+		ai_chance = { base = 90 }
+		
+		ROOT = { transfer_state = 462 }
+		ROOT = { transfer_state = 461 }
+		ROOT = { add_war_support = 0.15	}
+		
+		
+		
+		GER = {
+			country_event = { days = 1 id = germany.301 }
+		}
+	}
+	
+	option = {	#### noup
+		name = germany.300.b
+		
+		ai_chance = { base = 10 }
+		
+		GER = {
+			country_event = { days = 1 id = germany.302 }
+		}
+	}
+}
+
+country_event = {	#### Spain Accepts!
+	id = germany.301
+	title = germany.301.t
+	desc = germany.301.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.301.a
+
+			add_to_faction = D01
+			
+		}
+	}
+}
+
+country_event = {	####	Spain Rejects
+	id = germany.302
+	title = germany.302.t
+	desc = germany.302.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.302.a	#### Whatever
+		
+	}
+}
+
+
+
+
+
+country_event = {	#### Finnish Aliance
+	id = germany.310
+	title = germany.310.t
+	desc = germany.310.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = {	#### yep
+		name = germany.310.a
+		
+		FIN = { add_state_claim = 213	}
+		FIN = { add_state_claim = 215	}
+		FIN = { add_state_claim = 216	}
+		FIN = { add_war_support = 0.15	}
+		
+				ai_chance = { base = 100 }
+		
+		GER = {
+			country_event = { days = 1 id = germany.311 }
+		}
+	}
+	
+	option = {	#### noup
+		name = germany.310.b
+		
+				ai_chance = { base = 0 }
+		
+		add_political_power = -50
+		
+		GER = {
+			country_event = { days = 1 id = germany.312 }
+		}
+	}
+}
+
+country_event = {	#### Finland Accepts!
+	id = germany.311
+	title = germany.311.t
+	desc = germany.311.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.311.a
+		
+		add_to_faction = FIN
+	}
+}
+
+country_event = {	####	Finland Rejects
+	id = germany.312
+	title = germany.312.t
+	desc = germany.312.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.312.a	#### Whatever
+		
+		
+	}
+}
+
+
+
+
+country_event = {		#### Peace with Britain - first event for Britain if they want to
+	id = germany.320
+	title = germany.320.t
+	desc = germany.320.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = {	#### YES - will return Colonies and 
+		name = germany.320.a
+		
+		ai_chance = { base = 35 }
+		
+		add_political_power = -80
+		add_stability = -0.1
+		add_war_support = -0.2
+		
+		GER = {
+			country_event = { days = 1 id = germany.321 }
+		}
+
+	}
+	
+	option = {
+		name = germany.320.a
+		
+		ai_chance = { base = 65 }
+		
+		add_political_power = 75
+		add_stability = 0.1
+		add_war_support = 0.1
+		
+		GER = {
+			country_event = { days = 1 id = germany.323 }
+		}
+
+	}
+}
+
+country_event = {		#### Britain Wants peace
+	id = germany.321
+	title = germany.321.t
+	desc = germany.321.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = {	#### Great
+		name = germany.321.a
+		
+		GER = {
+			white_peace = ENG
+			
+			add_political_power = 50
+			
+			add_stability = 0.1
+			
+			country_event = { days = 3 id = germany.322 }
+		}
+	
+	}
+}
+
+country_event = {		#### Colonies Arives
+	id = germany.322
+	title = germany.322.t
+	desc = germany.322.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = {	#### Great
+		name = germany.322.a
+		
+		add_political_power = 75
+		
+		if = {
+			limit = {
+				OR = {
+					ENG = { controls_state = 541 }
+					any_other_country = {
+						is_in_faction_with = ENG
+						controls_state = 541
+					}
+				}
+			}
+		GER = { transfer_state = 541 }
+		}
+		
+		if = {
+			limit = {
+				OR = {
+					ENG = { controls_state = 546 }
+					any_other_country = {
+						is_in_faction_with = ENG
+						controls_state = 546
+					}
+				}
+			}
+		GER = { transfer_state = 546 }
+		}
+	}
+}
+
+country_event = {		#### The battle over Britain beggins!
+	id = germany.323
+	title = germany.323.t
+	desc = germany.323.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = {	#### Great
+		name = germany.323.a
+		
+		GER = {
+			add_war_support = 0.05
+		}
+	
+	}
+}
+
+
+
+
+
+
+country_event = {		#### Well, this will be hard AF :D Germania's Conference invitation
+	id = germany.400
+	title = germany.400.t
+	desc = germany.400.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = {	#### Join - state flag = join (later use for events)
+		name = germany.400.a
+		
+		ai_chance = { base = 80 }
+		
+		set_country_flag = GER_Conference_Join
+		
+	}
+	
+	option = {	#### No - state flag = refuse (later use for war goal)
+		name = germany.400.b
+		
+		ai_chance = { base = 20 }
+	
+		set_country_flag = GER_Conference_Refuse
+	}
+}
+
+
+
+country_event = {		#### #### Germania Conference - Day 1
+	id = germany.401
+	title = germany.401.t
+	desc = germany.401.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = {	#### 
+		name = germany.401.a
+		
+		ai_chance = { base = 100 }
+		
+		trigger = {
+			any_country = {
+				AND = {
+					has_country_flag = GER_Conference_Join
+					NOT = { is_in_faction_with = GER }
+				}
+			}
+		}
+		
+		add_political_power = -75
+		
+		country_event = { id = germany.402 }
+		
+		country_event = { id = germany.404 days = 3 }
+	
+	}
+	
+	option = {	#### Have a nice dinner
+		name = germany.401.b
+		
+		ai_chance = { base = 0 }
+		
+		add_political_power = -50
+	
+		country_event = { id = germany.404 days = 3 }
+	}
+	
+
+}
+
+country_event = { #### What to do with non-alied factions (Not in faction)
+	id = germany.402
+	title = germany.402.t
+	desc = germany.402.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = { #### Ask them to join our faction
+		name = germany.402.a
+		
+		add_political_power = -125
+		
+		every_country = {
+			limit = {
+				AND = {
+					has_country_flag = GER_Conference_Join
+					NOT = { is_in_faction_with = GER }
+				}
+				
+				country_event = { id = germany.403 }
+			}
+		}
+	
+		country_event = { id = germany.404 days = 3 }
+	
+	}
+	
+	option = { #### Its irelevant to us
+		name = germany.402.b
+		
+		
+		country_event = { id = germany.404 days = 3 }
+	}
+	
+	option = { #### War lul
+		name = germany.402.c
+		
+		add_political_power = -50
+		
+		every_other_country = {
+			limit = {
+				has_country_flag = GER_Conference_Join
+				NOT = { is_in_faction_with = GER }
+			}
+			
+			ROOT = {
+				create_wargoal = {
+					type = annex_everything
+					target = PREV
+				}
+			}
+			
+			modify_country_flag = { flag = GER_Conference_Join value = 0 }
+		}
+		
+		country_event = { id = germany.404 days = 3 }
+	}
+}
+
+
+country_event = {	#### Germany asks us to Join
+	id = germany.403
+	title = germany.403.t
+	desc = germany.403.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = {	#### YES
+		name = germany.403.a
+		
+		ai_chance = { base = 50 }
+		
+		GER = { 	
+			add_to_faction = ROOT
+		}
+		
+	}
+	
+	option = {	#### NOUP
+		name = germany.403.b
+		
+		ai_chance = { base = 50 }
+		
+		modify_country_flag = { flag = GER_Conference_Join value = 0 }
+
+		set_country_flag = GER_Conference_Disobeyed
+		
+	}
+}
+
+
+
+
+
+country_event = {	#### Germania Conference - Day 4
+	id = germany.404
+	title = germany.404.t
+	desc = germany.404.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = {	#### Vassal question
+		name = germany.404.a
+		
+		add_political_power = -100
+		
+		country_event = { id = germany.405 }
+
+	}
+	
+	option = {	#### Next day 
+		name = germany.404.b
+		
+		country_event = { id = germany.407 days = 3 }
+
+	}
+}
+
+
+
+country_event = {	#### Vasal question
+	id = germany.405
+	title = germany.405.t
+	desc = germany.405.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = {	#### Puppet
+		name = germany.405.a
+		
+		add_political_power = -250
+		
+		every_other_country = {
+			limit = {
+				has_country_flag = GER_Conference_Join
+				is_in_faction_with = GER 
+			}
+			
+			country_event = { id = germany.406 }
+		}
+		
+		country_event = { id = germany.407 days = 3 }
+	}
+	
+	option = {	#### Puppet Minors
+		name = germany.405.b
+		
+		add_political_power = -180
+		
+		every_other_country = {
+			limit = {
+				has_country_flag = GER_Conference_Join
+				is_in_faction_with = GER 
+				is_major = no
+			}
+			
+			country_event = { id = germany.406 }
+		}
+		
+		country_event = { id = germany.407 days = 3 }
+	}
+	
+	option = {	#### We are good
+		name = germany.405.c
+
+		country_event = { id = germany.407 days = 3 }
+		
+	}
+}
+
+
+
+country_event = {	#### Germany wants us puppeted'
+	id = germany.406
+	title = germany.406.t
+	desc = germany.406.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = {	#### Become Puppet
+		name = germany.406.a
+		
+		ai_chance = { base = 50 }
+		
+		GER	= {
+			set_autonomy = { target = ROOT autonomy_state = autonomy_satellite }
+		}
+
+	}
+	
+	option = {	#### Fuck them!
+		name = germany.406.b
+		
+		ai_chance = { base = 50 }
+		
+		modify_country_flag = { flag = GER_Conference_Join value = 0 }
+
+		remove_from_faction = ROOT
+		
+		set_country_flag = GER_Conference_Disobeyed
+	}
+}
+
+
+
+country_event = {	#### Germania Conference - Day 7
+	id = germany.407
+	title = germany.407.t
+	desc = germany.407.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = {	#### Deal with traitors
+		name = germany.407.a
+		
+		add_political_power = -95
+		
+		trigger = {
+			any_country = {
+				AND = {
+					has_country_flag = GER_Conference_Disobeyed
+				}
+			}
+		}
+
+		country_event = { id = germany.408 days = 3 }
+		
+	}
+	
+	option = {	#### End the conference
+		name = germany.407.b
+	
+	}
+}
+
+
+country_event = {	#### Traitors decisions!
+	id = germany.408
+	title = germany.408.t
+	desc = germany.408.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = {	#### Deal with them
+		name = germany.408.a
+		
+		add_political_power = -150
+		
+		every_other_country = {
+			limit = {
+				has_country_flag = GER_Conference_Disobeyed
+			}
+			
+			ROOT = {
+				remove_from_faction = {
+					target = PREV
+				}
+			}
+			
+			ROOT = {
+				create_wargoal = {
+					type = annex_everything
+					target = PREV
+				}
+			}
+		}
+		
+		every_other_country = {
+				limit = {
+					AND = {
+						any_owned_state = { is_on_continent = europe }
+						NOT = { original_tag = GER }
+						has_country_flag = GER_Conference_Refuse
+					}
+				}
+				
+				ROOT = {
+					remove_from_faction = {
+						target = PREV
+					}
+				}
+			
+				ROOT = {
+					create_wargoal = {
+						type = annex_everything
+						target = PREV
+					}
+				}
+		}
+		
+		random_country = {
+			limit = {
+				has_country_flag = GER_Conference_Disobeyed
+			}
+			create_faction = "Anti-German Defensive Pact"
+		}
+	}
+	
+	option = {	#### Let them be
+		name = germany.408.b
+		
+		add_political_power = -85
+		
+		every_other_country = {
+			limit = {
+				has_country_flag = GER_Conference_Disobeyed
+			}
+			
+			ROOT = {
+				remove_from_faction = {
+					target = PREV
+				}
+			}
+		}	
+		
+		random_country = {
+			limit = {
+				has_country_flag = GER_Conference_Disobeyed
+			}
+			create_faction = "Anti-German Defensive Pact"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+country_event = { 	### Germany demands navy!
+	id = germany.410
+	title = germany.410.t
+	desc = germany.410.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = { ### Well ofc
+		name = germany.410.a
+		ai_chance = { base = 100 }
+		
+		ROOT = {		
+			every_navy_leader = {
+				set_nationality = GER
+			}
+			
+			transfer_navy = { target = GER }
+		}
+	}
+	
+	option = { ### No (For real players only)
+		name = germany.410.a
+		ai_chance = { base = 0 }
+		
+		ROOT = {		
+			every_navy_leader = {
+				set_nationality = GER
+			}
+			
+			transfer_navy = { target = GER }
+		}
+	}
+	
+}
+
+
+
+
+country_event = {	####	Český záškodníci (Tohle jsem musel napsat česky hihi)
+	id = germany.500
+	title = germany.500.t
+	desc = germany.500.d
+	picture = GFX_report_event_german_speech
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		OR = {
+			AND = {
+				GER = { has_completed_focus = GER_end_of_czechoslovakia }
+				GER = { has_full_control_of_state = 9 }
+				date < 1941.12.1
+			}
+			
+			AND = {
+				GER = { has_full_control_of_state = 9 }
+				GER = { has_war_with = CZE }
+				date < 1941.12.1
+			}
+		}	
+	}
+	
+	option = {
+		name = germany.500.a	#### Českej odboj!
+		
+		GER = { 
+			add_ideas = GER_Odboj_I
+		}
+	}
+}
+
+
+
+
+
+
+
+country_event = {	####	Remove Japan From Research
+	id = germany.510
+	title = germany.510.t
+	desc = germany.510.d
+	picture = GFX_report_event_german_speech
+	
+	fire_only_once = yes
+	
+	hidden = {
+		GER = { no }
+		every_other_country = { yes }
+	}
+	
+	trigger = {
+		OR = {
+			AND = {
+				GER = { has_completed_focus = GER_Japan_Tech }
+				GER = { has_war = no }
+				JAP = { has_war = no }
+			}
+			
+			AND = {
+				GER = { has_completed_focus = GER_Japan_Tech }
+				GER = { has_war_with = JAP }
+			}
+		}	
+	}
+	
+	option = {
+		name = germany.510.a	#### No research for you boiz
+		
+		JAP = { remove_from_tech_sharing_group = axis_research }
+		
+		JAP = {
+			country_event = { days = 1 id = germany.511 }
+		}
+	}
+}
+
+country_event = {	#### Fuck the Germans (For Japanese)
+	id = germany.511
+	title = germany.511.t
+	desc = germany.511.d
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.511.a
+		
+		custom_effect_tooltip = germany.511_expl
+	}
+}
+

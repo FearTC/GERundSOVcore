@@ -1,0 +1,37 @@
+state = {
+	id=769
+	name= "STATE_769"
+	manpower = 433000
+	provinces= { 12299 7427 12215 7342 13214 }
+	state_category = large_town
+	resources={
+	}
+
+	history = {
+		owner = MAL
+		add_core_of = MAL
+		victory_points = {
+			12299 10
+		}
+		victory_points = {
+			7427 1
+		}
+		victory_points = {
+			12215 1
+		}
+		victory_points = {
+			7342 1
+		}
+		victory_points = {
+			13214 1
+		}
+		buildings = {
+			infrastructure = 4
+			air_base = 6
+			12299 = {
+				naval_base = 8
+				coastal_bunker = 3
+			}
+		}
+	}
+}

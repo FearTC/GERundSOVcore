@@ -1,0 +1,25 @@
+spriteTypes = {	
+
+	spriteType = {
+		name = "GFX_goal_gold_up"
+		texturefile = "gfx/interface/goals/umc_gen_goal_gold_up.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_military_academy"
+		texturefile = "gfx/interface/goals/umc_gen_goal_military_academy.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_goal_purchase_ships"
+		texturefile = "gfx/interface/goals/umc_gen_goal_purchase_ships.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_umc_gen_goal_conscription"
+		texturefile = "gfx/interface/goals/umc_gen_goal_conscription.dds"
+	}
+	
+}
+
+
