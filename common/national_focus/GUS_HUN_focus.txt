@@ -760,9 +760,9 @@ focus_tree = {
 		mutually_exclusive = { focus = HUN_allies_path }
 		x = 1
 		y = 8
-		relative_position_id = HUN_invite_the_habsburg_prince
+		relative_position_id = HUN_reclaim_the_empire
 
-		cost = 10
+		cost = 6
 
 		ai_will_do = {
 			factor = 60
@@ -812,14 +812,14 @@ focus_tree = {
 
 	focus = {
 		id = HUN_allies_path
-		icon = GFX_goal_generic_alliance
+		icon = GFX_goal_generic_military_sphere
 		prerequisite = { focus = HUN_reclaim_the_empire }
 		mutually_exclusive = { focus = HUN_axis_path }
 		x = -1
 		y = 8
-		relative_position_id = HUN_invite_the_habsburg_prince
+		relative_position_id = HUN_reclaim_the_empire
 
-		cost = 10
+		cost = 6
 
 		ai_will_do = {
 			factor = 60
@@ -866,7 +866,355 @@ focus_tree = {
 		completion_reward = {
 			ENG = { country_event = generic.2 }
 		}
-	}	
+	}
+	
+	############################
+	##  AUS-HUN Army reforms  ##
+	############################
+	
+	focus = {
+		id = HUN_army
+		icon = GFX_focus_rom_royal_dictatorship
+		prerequisite = { focus = HUN_reclaim_the_empire }
+		x = 3
+		y = 8
+		relative_position_id = HUN_reclaim_the_empire
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = HUN_quantity_army1
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = HUN_army }
+		mutually_exclusive = { focus = HUN_quality_army1 }
+		x = -1
+		y = 9
+		relative_position_id = HUN_army
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 40
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = HUN_quality_army1
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = HUN_army }
+		mutually_exclusive = { focus = HUN_quantity_army1 }
+		x = 1
+		y = 9
+		relative_position_id = HUN_army
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 60
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = HUN_quantity_army2
+		icon = GFX_focus_bo_enfields
+		prerequisite = { focus = HUN_quantity_army1 }
+		mutually_exclusive = { focus = HUN_quality_army2 }
+		x = -1
+		y = 10
+		relative_position_id = HUN_army
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 40
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = HUN_quality_army2
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = HUN_quality_army1 }
+		mutually_exclusive = { focus = HUN_quantity_army2 }
+		x = 1
+		y = 10
+		relative_position_id = HUN_army
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 60
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = HUN_quantity_army3
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = HUN_quantity_army2 }
+		mutually_exclusive = { focus = HUN_quality_army3 }
+		x = -1
+		y = 11
+		relative_position_id = HUN_army
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 40
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = HUN_quality_army3
+		icon = GFX_focus_chi_army_reform
+		prerequisite = { focus = HUN_quality_army2 }
+		mutually_exclusive = { focus = HUN_quantity_army3 }
+		x = 1
+		y = 11
+		relative_position_id = HUN_army
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 60
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = HUN_national_army
+		icon = GFX_recruitment
+		prerequisite = { focus = HUN_quality_army3 focus = HUN_quantity_army3 }
+		x = 0
+		y = 12
+		relative_position_id = HUN_army
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+
+		}
+	}
+	############################
+	## AUS-HUN Nation reforms ##
+	############################
+	
+	focus = {
+		id = HUN_nation
+		icon = GFX_goal_tfv_sever_ties_with_uk
+		prerequisite = { focus = HUN_reclaim_the_empire }
+		x = -3
+		y = 8
+		relative_position_id = HUN_reclaim_the_empire
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = HUN_
+		icon = GFX_
+		prerequisite = { focus = }
+		mutually_exclusive = { focus =  }
+		x = 
+		y = 
+		relative_position_id = 
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+
+		}
+	}
 	############################
 	##### DEMOCRATIC KING ######
 	############################
