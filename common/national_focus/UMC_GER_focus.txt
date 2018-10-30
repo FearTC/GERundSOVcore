@@ -8610,12 +8610,23 @@ focus_tree = {
 			has_army_manpower = { size > 949999 } #100 div			
 			#Make custom trigger tooltip here
 			85 = {
-				owner = {
+				OR = {
+					owner = {
 					original_tag = POL
+					}
+					owner = {
+					original_tag = DNZ
+					}
 				}
-				controller = {
+				OR = {
+					controller = {
 					original_tag = POL
+					}
+					controller = {
+					original_tag = DNZ
+					}
 				}
+				
 			}
 			OR = {
 				POL = {
@@ -8644,17 +8655,17 @@ focus_tree = {
 			OR = {
 				has_war_with = POL
 				is_in_faction_with = POL
-				NOT = {
-					85 = {
-						controller = {
-							original_tag = POL 
-						}
-						owner = {
-							original_tag = POL 
+					NOT = {
+						85 = {
+							OR = {
+							controller = { original_tag = POL }
+							owner = { original_tag = POL }
+							controller = { original_tag = DNZ }
+							owner = { original_tag = DNZ }
+							}
 						}
 					}
 				}
-			}
 		}
 		cancel_if_invalid = no
 		x = 0
@@ -8722,6 +8733,8 @@ focus_tree = {
 							OR = {
 								original_tag = POL
 								tag = POL
+								original_tag = DNZ
+								tag = DNZ
 							}
 						}
 					}
