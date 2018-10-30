@@ -2,4 +2,14 @@
  ########## Focuses ##########
  HUN_axis_path:0 "Path of Axis"
  HUN_allies_path:0 "Path of Allies"
+ HUN_carrier:0 "Carriers"
+ 
+ HUN_army:0 "Announce conscription"
+ HUN_quantity_army1:0 ""
+ HUN_quantity_army2:0 ""
+ HUN_quantity_army3:0 ""
+ HUN_quality_army1:0 ""
+ HUN_quality_army2:0 ""
+ HUN_quality_army3:0 ""
+ HUN_national_army:0 "Army of the Empire"
  
