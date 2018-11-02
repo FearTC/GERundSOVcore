@@ -5,15 +5,74 @@
  HUN_carrier:0 "Авианосцы"
  
  HUN_army:0 "Объявить призыв"
- HUN_quantity_army1:0 ""
- HUN_quantity_army2:0 ""
- HUN_quantity_army3:0 ""
- HUN_quality_army1:0 ""
- HUN_quality_army2:0 ""
- HUN_quality_army3:0 ""
+ HUN_army_desc:0 "Вернув все наши территории обратно в состав Империи, мы можем создать армию, которая будет достойно защищать её границы от всех наших врагов."
+ HUN_quantity_army1:0 "Имперский \nвсеобщий призыв"
+ HUN_quantity_army1_desc:0 ""
+ HUN_quantity_army2:0 "Новая программа \nподготовки солдат"
+ HUN_quantity_army2_desc:0 ""
+ HUN_quantity_army3:0 "Программа по оснащению \nнаших солдат"
+ HUN_quantity_army3_desc:0 ""
+ HUN_quality_army1:0 "Программа подготовки офицеров"
+ HUN_quality_army1_desc:0 ""
+ HUN_quality_army2:0 "Имперская строгость"
+ HUN_quality_army2_desc:0 ""
+ HUN_quality_army3:0 "Муштра в имперской армии"
+ HUN_quality_army3_desc:0 ""
  HUN_national_army:0 "Армия Империи"
+ HUN_national_army_desc:0 "Теперь наша армия способна защитить целостность нашего государства."
  
- HUN_nation:0 "Реформирование Империи"
+ HUN_nation:0 "Народные реформы"
+ HUN_nation_desc:0 ""
+ 
+ HUN_capital:0 "Столица Империи"
+ HUN_capital_desc:0 ""
+ 
+ HUN_all_nations:0 "Равенство наций"
+ HUN_all_nations_desc:0 ""
+ HUN_social_reform:0 "Социальная реформа"
+ HUN_social_reform_desc:0 ""
+ HUN_militarism:0 "Милитаризация общества"
+ HUN_militarism_desc:0 ""
+ HUN_empire_development:0 "Трёхлетний план"
+ HUN_empire_development_desc:0 ""
+ 
+ HUN_colonialism:0 "Новый колониализм"
+ HUN_colonialism_desc:0 ""
+ 
+ 
  
  HUN_etat_heavy_battleship:0 "Морские крепости"
+ HUN_etat_heavy_battleship_desc:0 ""
+ 
+ 
+ ########## Ideas ##########
+ hun_army_idea:0 "Призыв в армию Империи"
+ hun_army_idea_desc:0 ""
+ 
+ hun_quantity_idea_i:0 "Указ о расширении призыва"
+ hun_quantity_idea_i_desc:0 ""
+ hun_quantity_idea_ii:0 "Подготовка солдат Империи"
+ hun_quantity_idea_ii_desc:0 ""
+ hun_quantity_idea_iii:0 "Оснащение имперской армии"
+ hun_quantity_idea_iii_desc:0 ""
+ 
+ hun_quality_idea_i:0 "Имперские офицеры"
+ hun_quality_idea_i_desc:0 ""
+ hun_quality_idea_ii:0 "Отдел планирования операций"
+ hun_quality_idea_ii_desc:0 ""
+ hun_quality_idea_iii:0 "Строгая подготовка"
+ hun_quality_idea_iii_desc:0 ""
+ 
+ hun_national_army_idea:0 "Армия Империи"
+ hun_national_army_idea_desc:0 ""
+ 
+ hun_all_nations_idea:0 "Многонациональное государство"
+ hun_socialism:0 "Социальная реформа"
+ hun_militarism:0 "Милитаризация общества"
+ hun_empire_development_idea:0 "Трёхлетний план"
+ hun_colonialism_idea:0 "Австро-Венгерский колониализм"
+ hun_nation_idea:0 "Государственная реформа"
+ 
+ 
+ 
  
