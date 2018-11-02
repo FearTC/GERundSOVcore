@@ -1,0 +1,186 @@
+ideas = {
+	country = {
+		hun_ = {
+			allowed = {
+			}
+			picture = 
+			
+			modifier = {
+				
+			}
+		}
+		
+		hun_army_idea = {
+			allowed = {
+			}
+			picture = HUN_treaty_of_trianon
+			removal_cost = -1
+			
+			modifier = {
+				army_morale_factor = 0.15
+				conscription = 0.04
+			}
+		}
+		
+		hun_quantity_idea_i = {
+			allowed = {
+			}
+			picture = generic_army_war_college
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.04
+				conscription_factor = 0.2
+			}
+		}
+		hun_quantity_idea_ii = {
+			allowed = {
+			}
+			picture = generic_war_preparation
+			removal_cost = -1
+			
+			modifier = {
+				training_time_factor = -0.2
+			}
+		}
+		hun_quantity_idea_iii = {
+			allowed = {
+			}
+			picture = generic_production_bonus
+			removal_cost = -1
+			
+			modifier = {
+				attrition = -0.1
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.20 instant = yes
+				}
+				support_equipment = {
+					build_cost_ic = -0.20 instant = yes
+				}
+			}
+		}
+		
+		hun_quality_idea_i = {
+			allowed = {
+			}
+			picture = german_advisors
+			removal_cost = -1
+			
+			modifier = {
+				military_leader_cost_factor = 2
+				army_leader_start_level = 2
+				army_leader_start_attack_level= 2
+				army_leader_start_planning_level= 2
+				army_leader_start_defense_level= 2
+				army_leader_start_logistics_level= 2
+			}
+		}
+		hun_quality_idea_ii = {
+			allowed = {
+				always = no
+			}
+			picture = CZE_planning_bonus
+			removal_cost = -1
+			
+			modifier = {
+				planning_speed = 0.15
+				max_planning = 0.3
+			}
+		}
+		hun_quality_idea_iii = {
+			allowed = {
+			}
+			picture = generic_manpower_bonus
+			removal_cost = -1
+			
+			modifier = {
+				experience_gain_army = 0.05
+				army_org = 6
+				army_org_Factor = 0.2
+			}
+		}
+		
+		hun_national_army_idea = {
+			allowed = {
+			}
+			picture = generic_infantry_bonus
+			removal_cost = -1
+
+			modifier = {
+				send_volunteers_tension = -0.4
+				send_volunteer_divisions_required = -0.25
+				
+				army_attack_factor = 0.1
+				army_speed_factor = 0.1
+				army_defence_factor = 0.1
+			}
+		}
+		
+		hun_all_nations_idea = {
+			allowed = {
+			}
+			picture = FRA_national_mobilization_focus
+			
+			modifier = {
+				stability_factor = 0.1
+				political_power_gain = -0.5
+			}
+		}
+		hun_socialism = {
+			allowed = {
+			}
+			picture = generic_goods_red_bonus
+			
+			modifier = {
+				coomunism_drift = -0.05
+				consumer_goods_factor = 0.1
+				stability_factor = 0.3
+			}
+		}
+		hun_militarism = {
+			allowed = {
+			}
+			picture = generic_intel_bonus
+			
+			modifier = {
+				fascism_drift = 0.05
+				conscription = 0.01
+				war_support_factor = 0.2
+				stability_factor = 0.1
+			}
+		}
+		
+		hun_empire_development_idea = {
+			allowed = {
+			}
+			picture = generic_production_bonus
+			
+			modifier = {
+				production_speed_buildings_factor = 0.3
+			}
+		}
+		
+		hun_colonialism_idea = {
+			allowed = {
+			}
+			picture = hun_hungarian_monarchy_habsburg
+			
+			modifier = {
+				subjects_autonomy_gain = -1
+			}
+		}
+		
+		hun_nation_idea = {
+			allowed = {
+			}
+			picture = generic_volunteer_expedition_bonus
+			
+			modifier = {
+				stability_factor = 0.1
+				political_power_factor = 0.25
+			}
+		}
+	}
+}
