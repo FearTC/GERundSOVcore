@@ -399,7 +399,7 @@ focus_tree = {
 		y = 3
 		relative_position_id = HUN_invite_the_habsburg_prince
 
-		cost = 10
+		cost = 9
 
 		ai_will_do = {
 			factor = 60
@@ -449,7 +449,7 @@ focus_tree = {
 		y = 4
 		relative_position_id = HUN_invite_the_habsburg_prince
 
-		cost = 10
+		cost = 6
 
 		ai_will_do = {
 			factor = 60
@@ -512,7 +512,7 @@ focus_tree = {
 		y = 5
 		relative_position_id = HUN_invite_the_habsburg_prince
 
-		cost = 10
+		cost = 6
 
 		ai_will_do = {
 			factor = 60
@@ -566,7 +566,7 @@ focus_tree = {
 		y = 6
 		relative_position_id = HUN_invite_the_habsburg_prince
 
-		cost = 10
+		cost = 6
 
 		ai_will_do = {
 			factor = 60
@@ -615,7 +615,7 @@ focus_tree = {
 		y = 5
 		relative_position_id = HUN_invite_the_habsburg_prince
 
-		cost = 10
+		cost = 6
 
 		ai_will_do = {
 			factor = 60
@@ -663,7 +663,7 @@ focus_tree = {
 		y = 6
 		relative_position_id = HUN_invite_the_habsburg_prince
 
-		cost = 10
+		cost = 6
 
 		ai_will_do = {
 			factor = 60
@@ -705,7 +705,7 @@ focus_tree = {
 		y = 7
 		relative_position_id = HUN_invite_the_habsburg_prince
 
-		cost = 10
+		cost = 6
 
 		ai_will_do = {
 			factor = 60
@@ -713,16 +713,6 @@ focus_tree = {
 
 		available = {
 			is_subject = no
-			NOT = {
-				controls_state = 455
-				controls_state = 454
-				controls_state = 66 
-				controls_state = 67 
-				controls_state = 162
-				controls_state = 17 
-				controls_state = 159
-				controls_state = 161
-			}
 		}
 
 		bypass = {
