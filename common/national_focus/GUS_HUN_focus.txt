@@ -883,7 +883,10 @@ focus_tree = {
 		}
 
 		available = {
-
+			OR = {
+				has_idea = hun_socialism
+				has_idea = hun_militarism
+			}
 		}
 
 		cancel_if_invalid = yes
