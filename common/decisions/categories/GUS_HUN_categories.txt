@@ -1,7 +1,10 @@
-HUN_hungarian_investments = {
+HUN_economic_cooperation = {
 	
 	allowed = {
-		original_tag = HUN
+		OR = {
+			original_tag = HUN
+			original_tag = GER
+		}
 	}
 	
 	visible = {
