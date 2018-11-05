@@ -1,0 +1,56 @@
+﻿add_namespace = gus_hungary
+
+
+
+country_event = {
+	id = gus_hungary.
+	title = .t
+	desc = .d
+	picture = 
+	
+	is_triggered_only 
+	
+	option = {
+		name = .a
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+##### kaiser return
+country_event = {
+	id = gus_hungary.1
+	title = gus_hungary.1.t
+	desc = gus_hungary.1.d
+	picture = GFX_report_event_royal_parade
+	
+	is_triggered_only 
+	
+	option = {
+		name = gus_hungary.1.a
+		ai_chance = {
+			base = 30
+		}
+		set_country_flag = kaiser_wilhelm_ii
+		create_country_leader = {
+			name = "Wilhelm II"
+			desc = "POLITICS_WILHELM_II_DESC"
+			picture = GFX_portrait_ger_wilhelm_ii
+			expire = "1965.1.1"
+			ideology = nazism
+			traits = {
+				anti_democrat imperial_connections
+				GER_Hitler_T2
+				GER_Hitler_T4
+			}
+		}
+		hidden_effect = { news_event = { id = wtt_news.3 hours = 6 } }
+	}
+	
+	option = {
+		name = gus_hungary.1.b
+		ai_chance = {
+			base = 70
+		}
+	}
+}
