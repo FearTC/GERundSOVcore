@@ -1,7 +1,8 @@
 ﻿l_russian:
+ ########## Basic ##########
+ austrian_scope:0 "Австрийская сфера"
+ 
  ########## Focuses ##########
- HUN_axis_path:0 "Присоединиться к Оси"
- HUN_allies_path:0 "Присоединиться к Союзникам"
  HUN_carrier:0 "Авианосцы"
  
  HUN_army:0 "Объявить призыв"
@@ -39,7 +40,34 @@
  HUN_colonialism:0 "Новый колониализм"
  HUN_colonialism_desc:0 ""
  
+ HUN_alliences:0 "Внешнеполитическая проблема"
+ HUN_alliences_desc:0 ""
  
+ HUN_austrian_scope:0 "Австрийская сфера"
+ HUN_austrian_scope_desc:0 ""
+ 
+ HUN_bolgarian_problem:0 "Болгарский вопрос"
+ HUN_bolgarian_problem_desc:0 ""
+ HUN_greek_problem:0 "Греческий вопрос"
+ HUN_greek_problem_desc:0 ""
+ HUN_turkish_problem:0 "Турецкий вопрос"
+ HUN_turkish_problem_desc:0 ""
+ HUN_persian_oil:0 "Персидская нефть"
+ HUN_persian_oil_desc:0 ""
+ 
+ HUN_allience_germany:0 "Акцент на союзе\nс Германией"
+ HUN_allience_germany_desc:0 ""
+ 
+ HUN_nibelungenwerk:0 "Нибелунгенский Мюнхен-Веркеский танковый завод"
+ HUN_nibelungenwerk_desc:0 ""
+ HUN_help_to_germany:0 "Инвестиции в Германию"
+ HUN_help_to_germany_desc:0 ""
+ HUN_help_to_germany_EXPL:0 "Австро-Венгрия направит свои инвестиции в Германию"
+ HUN_exp_of_development:0 "Опыт в строительстве"
+ HUN_exp_of_development_desc:0 ""
+ 
+ HUN_kaiser_return:0 "Вернуть Кайзера в Германию"
+ HUN_kaiser_return_desc:0 ""
  
  HUN_etat_heavy_battleship:0 "Морские крепости"
  HUN_etat_heavy_battleship_desc:0 ""
@@ -72,6 +100,23 @@
  hun_empire_development_idea:0 "Трёхлетний план"
  hun_colonialism_idea:0 "Австро-Венгерский колониализм"
  hun_nation_idea:0 "Государственная реформа"
+ 
+ hun_german_plan:0 "Опыт имперского строительства"
+ 
+ ########## Decisions ##########
+ HUN_economic_cooperation:0 "Экономическое сотрудничество"
+ HUN_economic_cooperation_desc:0 ""
+ 
+ HUN_kaiser_returned:0 "Германский Кайзер"
+ HUN_kaiser_returned_desc:0 ""
+ 
+ ########## Events ##########
+ gus_hungary.1:0 "Австро-Венгрия предлагает вернуть кайзера"
+ gus_hungary.1.t:0 "Вопрос о возвращении кайзера"
+ gus_hungary.1.d:0 "Австро-Венгрия предложила нам помочь вернуть в Германию кайзера, если мы согласимся. Отто уверен, что вместе с Гитлером, они смогут уговорить кайзера вернуться в Германию, и всё равно, что об этом подумают страны Антанты."
+ gus_hungary.1.a:0 "Кайзер Германии должен править Германией!"
+ gus_hungary.1.b:0 "Мы не согласны."
+ 
  
  
  

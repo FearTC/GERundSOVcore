@@ -1,7 +1,8 @@
 ﻿l_english:
+ ########## Basic ##########
+ austrian_scope:0 "Австрийская сфера"
+ 
  ########## Focuses ##########
- HUN_axis_path:0 "Path of Axis"
- HUN_allies_path:0 "Path of Allies"
  HUN_carrier:0 "Carriers"
  
  HUN_army:0 "Announce conscription"
@@ -40,6 +41,8 @@
  HUN_colonialism_desc:0 ""
  
  
+ HUN_allience_germany:0 "Акцент на союзе\nс Германией"
+ HUN_allience_germany_desc:0 ""
  
  HUN_etat_heavy_battleship:0 "Sea fortresses"
  HUN_etat_heavy_battleship_desc:0 ""
