@@ -195,7 +195,7 @@ country_event = { #demand 164
 		}
 	}
 }
-country_event = { #fer create greek #no localisation
+country_event = { #for create greek #no localisation
 	id = gus_hungary.21
 	title = gus_hungary.21.t
 	desc = gus_hungary.21.d
@@ -245,7 +245,7 @@ country_event = { #for italy
 			}
 		}
 		HUN = {
-			set_state_owner = 164
+			transfer_state = 164
 		}
 	}
 	option = { #no
