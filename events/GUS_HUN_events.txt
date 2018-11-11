@@ -1,22 +1,5 @@
 ﻿add_namespace = gus_hungary
 
-
-
-country_event = {
-	id = gus_hungary.
-	title = .t
-	desc = .d
-	picture = 
-	
-	is_triggered_only 
-	
-	option = {
-		name = .a
-		ai_chance = {
-			base = 1
-		}
-	}
-}
 ##### kaiser return
 country_event = {
 	id = gus_hungary.1
@@ -24,12 +7,16 @@ country_event = {
 	desc = gus_hungary.1.d
 	picture = GFX_report_event_royal_parade
 	
-	is_triggered_only 
+	is_triggered_only = yes
 	
 	option = {
 		name = gus_hungary.1.a
 		ai_chance = {
-			base = 30
+			factor = 30
+			modifier = {
+				GER = { has_opinion = { target = HUN value > 99 } }
+				factor = 100 
+			}
 		}
 		set_country_flag = kaiser_wilhelm_ii
 		create_country_leader = {
@@ -44,13 +31,686 @@ country_event = {
 				GER_Hitler_T4
 			}
 		}
+		add_ideas = hun_adolf
 		hidden_effect = { news_event = { id = wtt_news.3 hours = 6 } }
 	}
 	
 	option = {
 		name = gus_hungary.1.b
 		ai_chance = {
-			base = 70
+			factor = 70
+		}
+	}
+}
+##### demands
+#### Bolgar
+country_event = { #no localisation
+	id = gus_hungary.10
+	title = gus_hungary.10.t
+	desc = gus_hungary.10.d
+	hidden = yes
+	fire_only_once = yes
+	
+	trigger = {
+		HUN = {
+			controls_state = 105
+			controls_state = 106
+			controls_state = 107
+			controls_state = 108
+			controls_state = 48
+			controls_state = 211
+			controls_state = 212
+		}
+	}
+	
+	option = {
+		name = gus_hungary.10.a
+		ai_chance = {
+			factor = 10
+		}
+		HUN = { country_event = { id = gus_hungary.12 hours = 2 } }
+	}
+}
+country_event = { #create Serb-Bulg
+	id = gus_hungary.12
+	title = gus_hungary.12.t
+	desc = gus_hungary.12.d
+	picture = GFX_report_event_talkssucceed
+	
+	is_triggered_only = yes
+	
+	option = { #yes
+		name = gus_hungary.12.a
+		ai_chance = {
+			factor = 100
+		}
+		set_autonomy = { target = BUL autonomy_state = autonomy_puppet }
+		BUL = {
+			set_cosmetic_tag = AHPB
+			add_state_core = 105
+			add_state_core = 106
+			add_state_core = 107
+			add_state_core = 108
+			add_state_core = 44
+			transfer_state = 105
+			transfer_state = 106
+			transfer_state = 107
+			transfer_state = 108
+			transfer_state = 48
+			transfer_state = 211
+			transfer_state = 212
+			set_capital = 107
+			set_politics = {
+				parties = {
+					democratic = { 
+						popularity = 0
+					}
+
+					fascism = {
+						popularity = 10
+					}
+		
+					communism = {
+						popularity = 0
+					}
+					
+					neutrality = { 
+						popularity = 90
+					}		
+				}
+				ruling_party = neutrality
+			}
+			set_party_name = { 
+				ideology = neutrality 
+				long_name = aushun_puppet_long
+				name = aushun_puppet
+			}
+		}
+	}
+	option = { #no
+		name = gus_hungary.12.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+#### Greek
+country_event = { #for demand 164 #no localisation
+	id = gus_hungary.24
+	title = gus_hungary.24.t
+	desc = gus_hungary.24.d
+	hidden = yes
+	fire_only_once = yes
+	
+	trigger = {
+		HUN = {
+			controls_state = 184
+			controls_state = 731
+			controls_state = 185
+			controls_state = 47
+			controls_state = 186
+			controls_state = 182
+			controls_state = 187
+			controls_state = 342
+			controls_state = 339
+			controls_state = 340
+			controls_state = 347
+			controls_state = 341
+		}
+		ITA = {
+			controls_state = 164
+		}
+	}
+	
+	option = {
+		name = gus_hungary.24.a
+		ai_chance = {
+			factor = 100
+		}
+		HUN = { country_event = { id = gus_hungary.20 hours = 2 } }
+	}
+}
+country_event = { #demand 164
+	id = gus_hungary.20
+	title = gus_hungary.20.t
+	desc = gus_hungary.20.d
+	
+	is_triggered_only = yes
+	
+	option = { #demand
+		name = gus_hungary.20.a
+		ai_chance = {
+			factor = 70
+			modifier = {
+				ITA = { is_in_faction_with = HUN }
+				factor = 100 
+			}
+		}
+		ITA = { country_event = { id = gus_hungary.22 hours = 2 } }
+	}
+	option = { #no
+		name = gus_hungary.20.b
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+country_event = { #fer create greek #no localisation
+	id = gus_hungary.21
+	title = gus_hungary.21.t
+	desc = gus_hungary.21.d
+	hidden = yes
+	fire_only_once = yes
+	
+	trigger = {
+		HUN = {
+			controls_state = 184
+			controls_state = 731
+			controls_state = 185
+			controls_state = 47
+			controls_state = 186
+			controls_state = 182
+			controls_state = 187
+			controls_state = 164
+			controls_state = 342
+			controls_state = 339
+			controls_state = 340
+			controls_state = 347
+			controls_state = 341
+		}
+	}
+	
+	option = {
+		name = gus_hungary.21.a
+		ai_chance = {
+			factor = 10
+		}
+		HUN = { country_event = { id = gus_hungary.23 hours = 2 } }
+	}
+}
+country_event = { #for italy
+	id = gus_hungary.22
+	title = gus_hungary.22.t
+	desc = gus_hungary.22.d
+	
+	is_triggered_only = yes
+	
+	option = { #yes
+		name = gus_hungary.22.a
+		ai_chance = {
+			factor = 70
+			modifier = {
+				ITA = { is_in_faction_with = HUN }
+				factor = 100 
+			}
+		}
+		HUN = {
+			set_state_owner = 164
+		}
+	}
+	option = { #no
+		name = gus_hungary.22.b
+		ai_chance = {
+			factor = 30
+		}
+		HUN = {
+			create_wargoal = {
+				type = annex_everything
+				target = ITA
+			}
+		}
+	}
+}
+country_event = { #create Greek
+	id = gus_hungary.23
+	title = gus_hungary.23.t
+	desc = gus_hungary.23.d
+	picture = GFX_report_event_talkssucceed
+	
+	is_triggered_only = yes
+	
+	option = { #yes
+		name = gus_hungary.23.a
+		ai_chance = {
+			factor = 100
+		}
+		set_autonomy = { target = GRE autonomy_state = autonomy_puppet }
+		GRE = {
+			set_cosmetic_tag = AHPG
+			add_state_core = 184
+			add_state_core = 731
+			add_state_core = 185
+			add_state_core = 47
+			add_state_core = 186
+			add_state_core = 182
+			add_state_core = 187
+			add_state_core = 164
+			add_state_core = 342
+			add_state_core = 339
+			add_state_core = 340
+			add_state_core = 347
+			add_state_core = 341
+			transfer_state = 184
+			transfer_state = 731
+			transfer_state = 185
+			transfer_state = 47
+			transfer_state = 186
+			transfer_state = 182
+			transfer_state = 187
+			transfer_state = 164
+			transfer_state = 342
+			transfer_state = 339
+			transfer_state = 340
+			transfer_state = 347
+			transfer_state = 341
+			set_capital = 341
+			set_politics = {
+				parties = {
+					democratic = { 
+						popularity = 0
+					}
+
+					fascism = {
+						popularity = 10
+					}
+		
+					communism = {
+						popularity = 0
+					}
+					
+					neutrality = { 
+						popularity = 90
+					}		
+				}
+				ruling_party = neutrality
+			}
+			set_party_name = { 
+				ideology = neutrality 
+				long_name = aushun_puppet_long
+				name = aushun_puppet
+			}
+		}
+	}
+	option = { #no
+		name = gus_hungary.23.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+#### Turkish
+country_event = { #fer create turkish #no localisation
+	id = gus_hungary.31
+	title = gus_hungary.31.t
+	desc = gus_hungary.31.d
+	hidden = yes
+	fire_only_once = yes
+	
+	trigger = {
+		HUN = {
+			controls_state = 343
+			controls_state = 49
+			controls_state = 346
+			controls_state = 345
+			controls_state = 356
+			controls_state = 348
+			controls_state = 344
+			controls_state = 355
+			controls_state = 349
+			controls_state = 350
+			controls_state = 354
+			controls_state = 353
+			controls_state = 352
+		}
+	}
+	
+	option = {
+		name = gus_hungary.31.a
+		ai_chance = {
+			factor = 10
+		}
+		HUN = { country_event = { id = gus_hungary.32 hours = 2 } }
+	}
+}
+country_event = { #create Turkish
+	id = gus_hungary.32
+	title = gus_hungary.32.t
+	desc = gus_hungary.32.d
+	picture = GFX_report_event_talkssucceed
+	
+	is_triggered_only = yes
+	
+	option = { #yes
+		name = gus_hungary.32.a
+		ai_chance = {
+			factor = 100
+		}
+		set_autonomy = { target = TUR autonomy_state = autonomy_puppet }
+		TUR = {
+			set_cosmetic_tag = AHPT
+			add_state_core = 343
+			add_state_core = 49
+			add_state_core = 346
+			add_state_core = 345
+			add_state_core = 356
+			add_state_core = 348
+			add_state_core = 344
+			add_state_core = 355
+			add_state_core = 349
+			add_state_core = 350
+			add_state_core = 354
+			add_state_core = 353
+			add_state_core = 352
+			transfer_state = 343
+			transfer_state = 49
+			transfer_state = 346
+			transfer_state = 345
+			transfer_state = 356
+			transfer_state = 348
+			transfer_state = 344
+			transfer_state = 355
+			transfer_state = 349
+			transfer_state = 350
+			transfer_state = 354
+			transfer_state = 353
+			transfer_state = 352
+			set_capital = 49
+			set_politics = {
+				parties = {
+					democratic = { 
+						popularity = 0
+					}
+
+					fascism = {
+						popularity = 10
+					}
+		
+					communism = {
+						popularity = 0
+					}
+					
+					neutrality = { 
+						popularity = 90
+					}		
+				}
+				ruling_party = neutrality
+			}
+			set_party_name = { 
+				ideology = neutrality 
+				long_name = aushun_puppet_long
+				name = aushun_puppet
+			}
+		}
+	}
+	option = { #no
+		name = gus_hungary.32.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+#### Persian
+country_event = { #fer create persian #no localisation
+	id = gus_hungary.41
+	title = gus_hungary.41.t
+	desc = gus_hungary.41.d
+	hidden = yes
+	fire_only_once = yes
+	
+	trigger = {
+		HUN = {
+			controls_state = 410
+			controls_state = 414
+			controls_state = 416
+			controls_state = 418
+			controls_state = 411
+			controls_state = 412
+			controls_state = 266
+			controls_state = 417
+			controls_state = 413
+			controls_state = 421
+			controls_state = 420
+			controls_state = 419
+			controls_state = 291
+			controls_state = 675
+			controls_state = 676
+		}
+	}
+	
+	option = {
+		name = gus_hungary.41.a
+		ai_chance = {
+			factor = 10
+		}
+		HUN = { country_event = { id = gus_hungary.42 hours = 2 } }
+	}
+}
+country_event = { #create Persian
+	id = gus_hungary.42
+	title = gus_hungary.42.t
+	desc = gus_hungary.42.d
+	picture = GFX_report_event_talkssucceed
+	
+	is_triggered_only = yes
+	
+	option = { #yes
+		name = gus_hungary.42.a
+		ai_chance = {
+			factor = 100
+		}
+		set_autonomy = { target = PER autonomy_state = autonomy_puppet }
+		PER = {
+			set_cosmetic_tag = AHPP
+			add_state_core = 410
+			add_state_core = 414
+			add_state_core = 416
+			add_state_core = 418
+			add_state_core = 411
+			add_state_core = 412
+			add_state_core = 266
+			add_state_core = 417
+			add_state_core = 413
+			add_state_core = 421
+			add_state_core = 420
+			add_state_core = 419
+			add_state_core = 291
+			add_state_core = 675
+			add_state_core = 676
+			add_state_core = 656
+			add_state_core = 680
+			add_state_core = 554
+			add_state_core = 677
+			add_state_core = 553
+			transfer_state = 410
+			transfer_state = 414
+			transfer_state = 416
+			transfer_state = 418
+			transfer_state = 411
+			transfer_state = 412
+			transfer_state = 266
+			transfer_state = 417
+			transfer_state = 413
+			transfer_state = 421
+			transfer_state = 420
+			transfer_state = 419
+			transfer_state = 291
+			transfer_state = 675
+			transfer_state = 676
+			set_capital = 291
+			set_politics = {
+				parties = {
+					democratic = { 
+						popularity = 0
+					}
+
+					fascism = {
+						popularity = 10
+					}
+		
+					communism = {
+						popularity = 0
+					}
+					
+					neutrality = { 
+						popularity = 90
+					}		
+				}
+				ruling_party = neutrality
+			}
+			set_party_name = { 
+				ideology = neutrality 
+				long_name = aushun_puppet_long
+				name = aushun_puppet
+			}
+		}
+	}
+	option = { #no
+		name = gus_hungary.42.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+#### Romania
+country_event = { #fer create turkish #no localisation
+	id = gus_hungary.51
+	title = gus_hungary.51.t
+	desc = gus_hungary.51.d
+	hidden = yes
+	fire_only_once = yes
+	
+	trigger = {
+		HUN = {
+			controls_state = 343
+			controls_state = 49
+			controls_state = 346
+			controls_state = 345
+			controls_state = 356
+			controls_state = 348
+			controls_state = 344
+			controls_state = 355
+			controls_state = 349
+			controls_state = 350
+			controls_state = 354
+			controls_state = 353
+			controls_state = 352
+		}
+	}
+	
+	option = {
+		name = gus_hungary.51.a
+		ai_chance = {
+			factor = 10
+		}
+		HUN = { country_event = { id = gus_hungary.52 hours = 2 } }
+	}
+}
+country_event = { #create Romania
+	id = gus_hungary.52
+	title = gus_hungary.52.t
+	desc = gus_hungary.52.d
+	picture = GFX_report_event_talkssucceed
+	
+	is_triggered_only = yes
+	
+	option = { #yes
+		name = gus_hungary.52.a
+		ai_chance = {
+			factor = 100
+		}
+		set_autonomy = { target = ROM autonomy_state = autonomy_puppet }
+		ROM = {
+			set_cosmetic_tag = AHPR
+			transfer_state = 78
+			transfer_state = 79
+			transfer_state = 46
+			transfer_state = 77
+			transfer_state = 81
+			set_capital = 46
+			set_politics = {
+				parties = {
+					democratic = { 
+						popularity = 0
+					}
+
+					fascism = {
+						popularity = 10
+					}
+		
+					communism = {
+						popularity = 0
+					}
+					
+					neutrality = { 
+						popularity = 90
+					}		
+				}
+				ruling_party = neutrality
+			}
+			set_party_name = { 
+				ideology = neutrality 
+				long_name = aushun_puppet_long
+				name = aushun_puppet
+			}
+			hidden_effect = {
+				create_country_leader = {
+				name = "Carol II"
+				desc = "POLITICS_CAROL_II_DESC"
+				picture = GFX_Portrait_romania_Carol_II				
+				expire = "1965.1.1"
+				ideology = despotism
+				traits = {
+					hedonist
+				}
+				id = 550
+			}
+			}
+		}
+	}
+	option = { #no
+		name = gus_hungary.52.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+#### Romanian Oil for Germany
+country_event = { #no localisation
+	id = gus_hungary.60
+	title = gus_hungary.60.t
+	desc = gus_hungary.60.d
+	picture = GFX_report_event_talkssucceed
+	
+	trigger = {
+		GER = { is_in_faction_with = HUN }
+		ROM = { is_puppet_of = HUN }
+		ROM = { controls_state = 46 }
+	}
+	
+	option = { 
+		GER = { country_event = { id = gus_hungary.61 hours = 2 } }
+	}
+}
+country_event = {
+	id = gus_hungary.61
+	title = gus_hungary.60.t
+	desc = gus_hungary.60.d
+	picture = GFX_report_event_talkssucceed
+	
+	is_triggered_only = yes
+	
+	option = { #yes
+		name = gus_hungary.61.a
+		ai_chance = {
+			factor = 90
+		}
+		create_import = { resource = oil amount = 30 exporter = ROM }
+	}
+	
+	option = { #no
+		name = gus_hungary.61.b
+		ai_chance = {
+			factor = 10
 		}
 	}
 }
