@@ -10,6 +10,17 @@ ideas = {
 			}
 		}
 		
+		hun_german_plan = {
+			allowed = {
+			}
+			picture = generic_production_bonus
+			
+			modifier = {
+				production_speed_buildings_factor = 0.3
+				global_building_slots_factor = 0.2
+			}
+		}
+		
 		hun_army_idea = {
 			allowed = {
 			}
@@ -176,6 +187,17 @@ ideas = {
 			allowed = {
 			}
 			picture = generic_volunteer_expedition_bonus
+			
+			modifier = {
+				stability_factor = 0.1
+				political_power_factor = 0.25
+			}
+		}
+		
+		hun_adolf = {
+			allowed = {
+			}
+			picture = GFX_idea_GER_Adolf_Hitler_eco_val
 			
 			modifier = {
 				stability_factor = 0.1
