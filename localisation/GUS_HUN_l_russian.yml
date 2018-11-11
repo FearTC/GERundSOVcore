@@ -106,6 +106,8 @@
  
  hun_german_plan:0 "Опыт имперского строительства"
  
+ hun_adolf:0 "Адольф Гитлер"
+ 
  ########## Decisions ##########
  HUN_economic_cooperation:0 "Экономическое сотрудничество"
  HUN_economic_cooperation_desc:0 ""
