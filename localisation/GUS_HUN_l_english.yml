@@ -1,26 +1,29 @@
 ﻿l_english:
  ########## Basic ##########
- austrian_scope:0 "Австрийская сфера"
+ austrian_scope:0 "Австро-Венгерская сфера влияния"
+ 
+ aushun_puppet_long:0 "Имперское представительство"
+ aushun_puppet:0 "Имперское представительство"
  
  ########## Focuses ##########
- HUN_carrier:0 "Carriers"
+ HUN_carrier:0 "Авианосцы"
  
- HUN_army:0 "Announce conscription"
- HUN_army_desc:0 ""
- HUN_quantity_army1:0 "Imperial overall conscription"
+ HUN_army:0 "Объявить призыв"
+ HUN_army_desc:0 "Вернув все наши территории обратно в состав Империи, мы можем создать армию, которая будет достойно защищать её границы от всех наших врагов."
+ HUN_quantity_army1:0 "Имперский \nвсеобщий призыв"
  HUN_quantity_army1_desc:0 ""
- HUN_quantity_army2:0 "New Soldier \nTraining Program"
+ HUN_quantity_army2:0 "Новая программа \nподготовки солдат"
  HUN_quantity_army2_desc:0 ""
- HUN_quantity_army3:0 "The program to equip \nour soldiers"
+ HUN_quantity_army3:0 "Программа по оснащению \nнаших солдат"
  HUN_quantity_army3_desc:0 ""
- HUN_quality_army1:0 "Officer Training Program"
+ HUN_quality_army1:0 "Программа подготовки офицеров"
  HUN_quality_army1_desc:0 ""
- HUN_quality_army2:0 "Imperial rigor"
+ HUN_quality_army2:0 "Имперская строгость"
  HUN_quality_army2_desc:0 ""
- HUN_quality_army3:0 "Imperial Army drill"
+ HUN_quality_army3:0 "Муштра в имперской армии"
  HUN_quality_army3_desc:0 ""
- HUN_national_army:0 "Army of the Empire"
- HUN_national_army_desc:0 ""
+ HUN_national_army:0 "Армия Империи"
+ HUN_national_army_desc:0 "Теперь наша армия способна защитить целостность нашего государства."
  
  HUN_nation:0 "Народные реформы"
  HUN_nation_desc:0 ""
@@ -40,11 +43,36 @@
  HUN_colonialism:0 "Новый колониализм"
  HUN_colonialism_desc:0 ""
  
+ HUN_alliences:0 "Внешнеполитическая проблема"
+ HUN_alliences_desc:0 ""
+ 
+ HUN_austrian_scope:0 "Наша сфера влияния"
+ HUN_austrian_scope_desc:0 ""
+ 
+ HUN_bolgarian_problem:0 "Захват Болгарии"
+ HUN_bolgarian_problem_desc:0 ""
+ HUN_greek_problem:0 "Захват Греции"
+ HUN_greek_problem_desc:0 ""
+ HUN_turkish_problem:0 "Захват Турции"
+ HUN_turkish_problem_desc:0 ""
+ HUN_persian_oil:0 "Персидская нефть"
+ HUN_persian_oil_desc:0 ""
  
  HUN_allience_germany:0 "Акцент на союзе\nс Германией"
  HUN_allience_germany_desc:0 ""
  
- HUN_etat_heavy_battleship:0 "Sea fortresses"
+ HUN_nibelungenwerk:0 "Нибелунгенский Мюнхен-Веркеский танковый завод"
+ HUN_nibelungenwerk_desc:0 ""
+ HUN_help_to_germany:0 "Инвестиции в Германию"
+ HUN_help_to_germany_desc:0 ""
+ HUN_help_to_germany_EXPL:0 "Станут доступны решения об экономическом сотрудничестве между Германией и Австро-Венгрией"
+ HUN_exp_of_development:0 "Опыт в строительстве"
+ HUN_exp_of_development_desc:0 ""
+ 
+ HUN_kaiser_return:0 "Вернуть Кайзера в Германию"
+ HUN_kaiser_return_desc:0 ""
+ 
+ HUN_etat_heavy_battleship:0 "Морские крепости"
  HUN_etat_heavy_battleship_desc:0 ""
  
  
@@ -75,3 +103,104 @@
  hun_empire_development_idea:0 "Трёхлетний план"
  hun_colonialism_idea:0 "Австро-Венгерский колониализм"
  hun_nation_idea:0 "Государственная реформа"
+ 
+ hun_german_plan:0 "Опыт имперского строительства"
+ 
+ ########## Decisions ##########
+ HUN_economic_cooperation:0 "Экономическое сотрудничество"
+ HUN_economic_cooperation_desc:0 ""
+ 
+ HUN_ger_expand_the_military_industry:0 "Финансирование строительства военного завода в Австро-Венгрии"
+ HUN_ger_expand_the_military_industry_desc:0 ""
+ 
+ HUN_hun_expand_the_military_industry:0 "Финансирование строительства военного завода в Германии"
+ HUN_hun_expand_the_military_industry_desc:0 ""
+ 
+ HUN_ger_expand_the_heavy_industries:0 "Финансирование строительства гражданской фабрики в Австро-Венгрии"
+ HUN_ger_expand_the_heavy_industries_desc:0 ""
+ 
+ HUN_hun_expand_the_heavy_industries:0 "Финансирование строительства гражданской фабрики в Германии"
+ HUN_hun_expand_the_heavy_industries_desc:0 ""
+ 
+ HUN_kaiser_returned:0 "Германский Кайзер"
+ HUN_kaiser_returned_desc:0 ""
+ 
+ ########## Events ##########
+ gus_hungary.1:0 "Австро-Венгрия предлагает вернуть кайзера"
+ gus_hungary.1.t:0 "Австро-Венгрия предлагает вернуть кайзера"
+ gus_hungary.1.d:0 "Австро-Венгрия предложила нам помочь вернуть в Германию кайзера, если мы согласимся. Отто уверен, что вместе с Гитлером, они смогут уговорить кайзера вернуться в Германию, и ему всё равно, что об этом подумают страны бывшей Антанты."
+ gus_hungary.1.a:0 "Кайзер Германии должен править Германией!"
+ gus_hungary.1.b:0 "Отказать."
+ 
+ gus_hungary.12:0 "Объединённая администрациия Сербии и Болгарии"
+ gus_hungary.12.t:0 "Объединённая администрациия Сербии и Болгарии"
+ gus_hungary.12.d:0 "Нам следует учредить свою администрация на завоёванных территриях?"
+ gus_hungary.12.a:0 "Конечно"
+ gus_hungary.12.b:0 "Продолжить оккупацию"
+ 
+ gus_hungary.20:0 "Требование островов"
+ gus_hungary.20.t:0 "Требование островов"
+ gus_hungary.20.d:0 "Завоев греческие и турецкие территории, для полного контроля этого региона нам требуются лешь острова, которыми сейчас владеет Италия. Как мы с этим поступим?"
+ gus_hungary.20.a:0 "Послать требования"
+ gus_hungary.20.b:0 "Нам это не нужно"
+ 
+ gus_hungary.22:0 "Австро-Венгрия требует острова"
+ gus_hungary.22.t:0 "Австро-Венгрия требует острова"
+ gus_hungary.22.d:0 "Завоев греческие и турецкие территории, Австро-Венрия требует острова, которые сейчас под нашем контролем."
+ gus_hungary.22.a:0 "Пусть забирают"
+ gus_hungary.22.b:0 "Это НАШИ территории!"
+ 
+ gus_hungary.23:0 "Эллинская администрация"
+ gus_hungary.23.t:0 "Эллинская администрация"
+ gus_hungary.23.d:0 "Нам следует учредить свою администрация на завоёванных территриях?"
+ gus_hungary.23.a:0 "Конечно"
+ gus_hungary.23.b:0 "Продолжить оккупацию"
+ 
+ gus_hungary.32:0 "Турецкая администрация"
+ gus_hungary.32.t:0 "Турецкая администрация"
+ gus_hungary.32.d:0 "Нам следует учредить свою администрация на завоёванных территриях?"
+ gus_hungary.32.a:0 "Конечно"
+ gus_hungary.32.b:0 "Продолжить оккупацию"
+ 
+ gus_hungary.42:0 "Персидская администрация"
+ gus_hungary.42.t:0 "Персидская администрация"
+ gus_hungary.42.d:0 "Нам следует учредить свою администрация на завоёванных территриях?"
+ gus_hungary.42.a:0 "Конечно"
+ gus_hungary.42.b:0 "Продолжить оккупацию"
+ 
+ ########## Nations ##########
+ AHPB_fascism:0 "Сербо-Болгарское царство"
+ AHPB_democratic:0 "Сербо-Болгарская республика"
+ AHPB_neutrality:0 "Сербо-Болгарское королевство"
+ AHPB_communism:0 "Балканская коммуна"
+ 
+ AHPB_HUN_autonomy_puppet:0 "Сербо-Болгарская администрация"
+ AHPB_HUN_autonomy_puppet_DEF:0 "Сербо-Болгарская администрация"
+ 
+ 
+ AHPG_fascism:0 "Эллинская империя"
+ AHPG_democratic:0 "Эллинская республика"
+ AHPG_neutrality:0 "Эллинское королевство"
+ AHPG_communism:0 "Эллинская коммуна"
+ 
+ AHPG_HUN_autonomy_puppet:0 "Эллинская администрация"
+ AHPG_HUN_autonomy_puppet_DEF:0 "Эллинская администрация"
+ 
+ 
+ AHPT_fascism:0 "Турецкое государство"
+ AHPT_democratic:0 "Турецкая республика"
+ AHPT_neutrality:0 "Турецкое королевство"
+ AHPT_communism:0 "Турецкая коммуна"
+ 
+ AHPT_HUN_autonomy_puppet:0 "Турецкая администрация"
+ AHPT_HUN_autonomy_puppet_DEF:0 "Турецкая администрация"
+ 
+ 
+ AHPP_fascism:0 "Персидская империя"
+ AHPP_democratic:0 "Персидская республика"
+ AHPP_neutrality:0 "Королевство Персия"
+ AHPP_communism:0 "Персидская коммуна"
+ 
+ AHPP_HUN_autonomy_puppet:0 "Персидская администрация"
+ AHPP_HUN_autonomy_puppet_DEF:0 "Персидская администрация"
+ 
