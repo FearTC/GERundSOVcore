@@ -672,6 +672,8 @@ country_event = { #no localisation
 	title = gus_hungary.60.t
 	desc = gus_hungary.60.d
 	picture = GFX_report_event_talkssucceed
+	hidden = yes
+	fire_only_once = yes
 	
 	trigger = {
 		GER = { is_in_faction_with = HUN }
@@ -679,14 +681,18 @@ country_event = { #no localisation
 		ROM = { controls_state = 46 }
 	}
 	
-	option = { 
+	option = {
+		name = gus_hungary.60.a
+		ai_chance = {
+			factor = 10
+		}
 		GER = { country_event = { id = gus_hungary.61 hours = 2 } }
 	}
 }
 country_event = {
 	id = gus_hungary.61
-	title = gus_hungary.60.t
-	desc = gus_hungary.60.d
+	title = gus_hungary.61.t
+	desc = gus_hungary.61.d
 	picture = GFX_report_event_talkssucceed
 	
 	is_triggered_only = yes
