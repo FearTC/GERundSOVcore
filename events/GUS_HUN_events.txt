@@ -572,7 +572,7 @@ country_event = { #create Persian
 	}
 }
 #### Romania
-country_event = { #fer create turkish #no localisation
+country_event = { #fer create romania #no localisation
 	id = gus_hungary.51
 	title = gus_hungary.51.t
 	desc = gus_hungary.51.d
@@ -581,19 +581,11 @@ country_event = { #fer create turkish #no localisation
 	
 	trigger = {
 		HUN = {
-			controls_state = 343
-			controls_state = 49
-			controls_state = 346
-			controls_state = 345
-			controls_state = 356
-			controls_state = 348
-			controls_state = 344
-			controls_state = 355
-			controls_state = 349
-			controls_state = 350
-			controls_state = 354
-			controls_state = 353
-			controls_state = 352
+			controls_state = 78
+			controls_state = 79
+			controls_state = 46
+			controls_state = 77
+			controls_state = 81
 		}
 	}
 	
