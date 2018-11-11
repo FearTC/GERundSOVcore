@@ -2,7 +2,7 @@ GER_speeches_category = {
 
 	gersov_unholy_alliance = { ######## Axis Berlin-Moscow
 
-		icon = unholy_alliance
+		icon = ger_reichskommissariats
 		
 		allowed = {
 			tag = GER
@@ -15,6 +15,11 @@ GER_speeches_category = {
 			has_completed_focus = GER_soviet_treaty
 			NOT = { is_in_faction_with = SOV }
 			NOT = { has_war_with = SOV }
+		}
+		
+		available = {
+			has_government = fascism
+			has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
 		}
 
 		complete_effect = {
@@ -47,7 +52,10 @@ GER_speeches_category = {
 
 		visible = {
 			has_government = fascism
-			has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+			OR = { 
+				has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+				has_idea = hun_adolf
+			}
 			has_war = no
 			ENG = { has_government = democratic }
 			FRA = { has_government = democratic }
@@ -56,7 +64,10 @@ GER_speeches_category = {
 
 		available = {
 			has_government = fascism
-			has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+			OR = { 
+				has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+				has_idea = hun_adolf
+			}
 		}
 
 		complete_effect = {
@@ -84,7 +95,10 @@ GER_speeches_category = {
 
 		visible = {
 			has_government = fascism
-			has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+			OR = { 
+				has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+				has_idea = hun_adolf
+			}
 			has_war = no
 		}
 
@@ -112,7 +126,10 @@ GER_speeches_category = {
 
 		visible = {
 			has_government = fascism
-			has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+			OR = { 
+				has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+				has_idea = hun_adolf
+			}
 			has_war = no
 		}
 		
@@ -149,7 +166,10 @@ GER_speeches_category = {
 
 		available = { 
 			has_government = fascism
-			has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+			OR = { 
+				has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+				has_idea = hun_adolf
+			}
 			has_war = no
 		}
 
@@ -182,7 +202,10 @@ GER_speeches_category = {
 
 		available = {
 			has_government = fascism
-			has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+			OR = { 
+				has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+				has_idea = hun_adolf
+			}
 		}
 
 		complete_effect = {
@@ -210,7 +233,10 @@ GER_speeches_category = {
 
 		available = { 
 			has_government = fascism
-			has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+			OR = { 
+				has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+				has_idea = hun_adolf
+			}
 		}
 			
 	
@@ -244,7 +270,10 @@ GER_speeches_category = {
 
 		available = { 
 			has_government = fascism
-			has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+			OR = { 
+				has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+				has_idea = hun_adolf
+			}
 		}
 
 
@@ -269,14 +298,20 @@ GER_speeches_category = {
 
 		visible = {
 			has_government = fascism
-			has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+			OR = { 
+				has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+				has_idea = hun_adolf
+			}
 			NOT = { has_war_with = POL }
 			country_exists = POL
 			}
 
 		available = {
 			has_government = fascism
-			has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+			OR = { 
+				has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+				has_idea = hun_adolf
+			}
 			
 			OR = {	
 			has_completed_focus = GER_danzig_or_war
@@ -314,13 +349,19 @@ GER_speeches_category = {
 
 		visible = {
 			has_government = fascism
-			has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+			OR = { 
+				has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+				has_idea = hun_adolf
+			}
 			GER = { has_war_with = ENG }
 			}
 
 		available = {
 			has_government = fascism
-			has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+			OR = { 
+				has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+				has_idea = hun_adolf
+			}
 			ENG = { has_country_leader = { ruling_only = yes name = "Winston Churchill" } }
 			GER = { has_war_with = ENG }
 			FRA = { has_capitulated = yes }
@@ -354,7 +395,10 @@ GER_speeches_category = {
 
 		visible = {
 			has_government = fascism
-			has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+			OR = { 
+				has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+				has_idea = hun_adolf
+			}
 			NOT = { has_war_with = SOV }
 			country_exists = SOV
 			has_completed_focus = GER_anti_comitern_pact
@@ -362,7 +406,10 @@ GER_speeches_category = {
 
 		available = {
 			has_government = fascism
-			has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+			OR = { 
+				has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+				has_idea = hun_adolf
+			}
 			has_idea = joseph_goebbels
 			has_completed_focus = GER_ussr_war_goal
 			
@@ -395,14 +442,20 @@ GER_speeches_category = {
 
 		visible = {
 			has_government = fascism
-			has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+			OR = { 
+				has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+				has_idea = hun_adolf
+			}
 			NOT = { GER = { has_war_with = USA } }
 			country_exists = USA
 		}
 
 		available = {
 			has_government = fascism
-			has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+			OR = { 
+				has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+				has_idea = hun_adolf
+			}
 			15 = { is_fully_controlled_by = ROOT }
 			16 = { is_fully_controlled_by = ROOT }
 			29 = { is_fully_controlled_by = ROOT }
@@ -435,7 +488,10 @@ GER_speeches_category = {
 
 		visible = {
 			has_government = fascism
-			has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+			OR = { 
+				has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+				has_idea = hun_adolf
+			}
 			has_completed_focus = GER_anti_comitern_pact
 			has_war_with = SOV
 			has_war_with = ENG
@@ -444,7 +500,10 @@ GER_speeches_category = {
 
 		available = {
 			has_government = fascism
-			has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+			OR = { 
+				has_country_leader = { ruling_only = yes name = "Adolf Hitler" }
+				has_idea = hun_adolf
+			}
 			has_idea = joseph_goebbels
 			has_war_with = SOV
 			has_war_with = ENG
