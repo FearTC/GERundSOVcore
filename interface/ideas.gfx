@@ -3642,9 +3642,9 @@ spriteTypes = {
 		name = "GFX_idea_ROM_iuliu_maniu"
 		texturefile = "gfx/interface/ideas/idea_generic_democratic_europe.dds"
 	}
-	spriteType = { #Auto-Generated
-		name = "GFX_idea_GER_Adolf_Hitler_eco_val"
-		texturefile = "gfx/interface/ideas/GER_Adolf_Hitler.dds"
+	spriteType = {
+		name = "GFX_idea_HUN_adolf_hitler"
+		texturefile = "gfx/interface/ideas/idea_hun_adolf_hitler.dds"
 	}
 	
 }

@@ -197,7 +197,7 @@ ideas = {
 		hun_adolf = {
 			allowed = {
 			}
-			picture = GFX_idea_GER_Adolf_Hitler_eco_val
+			picture = GFX_idea_HUN_adolf_hitler
 			
 			modifier = {
 				stability_factor = 0.1
